@@ -93,7 +93,7 @@ class Greeting extends ComponentDialog {
         }
         if (!userProfile.name) {
             // prompt for name, if missing
-            return await step.prompt(NAME_PROMPT, 'What is your name?');
+            return await step.prompt(NAME_PROMPT, 'May i know what is your name?');
         } else {
             return await step.next();
         }
