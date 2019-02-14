@@ -1,0 +1,61 @@
+{
+  "name": "Testm",
+  "padlock": "6tHIjJHfn4rfh/vDwcyHeA==!tPi4sMAo2aqMGlLhsCuj7nvJjO+g738LRkFUgTAxYkMslNi+/fWPIlW/zaQ4aj7Q",
+  "version": "2.0",
+  "services": [
+    {
+      "tenantId": "eaba9aa8-58e4-478b-855b-b2baaaf8ceb2",
+      "subscriptionId": "3b4881dd-ca10-4416-9558-8475b172ada3",
+      "resourceGroup": "RamaiahWebAppBot",
+      "serviceName": "Testm",
+      "type": "abs",
+      "name": "Testm",
+      "id": "1"
+    },
+    {
+      "connectionString": "eU5mYBOE/jtvf3cXA7lc4Q==!b7KJw4RzovcsoiueZvMzgq5i9/cf5ImQbqRUS3CKYyu2VjX1gL8dbkclD//xvj5plZzlH5u9qkWZdC5nyV2ukDGzmpkYmZ+gXaNzgY4cthuKl1+AdDVPGnldr2nRKVDcqnSq9ead7V/YYG5b6Fy/8SMAjK6oMtIHyeirk30dP3yGbzyP2y897dvHv8bsnlN4puKlb+mjeGt4nfYDb6/9Fw==",
+      "tenantId": "eaba9aa8-58e4-478b-855b-b2baaaf8ceb2",
+      "subscriptionId": "3b4881dd-ca10-4416-9558-8475b172ada3",
+      "resourceGroup": "RamaiahWebAppBot",
+      "serviceName": "testmbfcc",
+      "type": "blob",
+      "id": "2"
+    },
+    {
+      "appId": "",
+      "appPassword": "",
+      "endpoint": "http://localhost:3978/api/messages",
+      "type": "endpoint",
+      "name": "development",
+      "id": "3"
+    },
+    {
+      "appId": "6845ca57-2088-4c93-a4b3-4f3738ee1686",
+      "appPassword": "N8BBafcQoQcVjKwF5rC4mw==!wZTxcbiy8zVqg2WgUP1+DTJliPsqoFexnXXDg5DXqR8=",
+      "endpoint": "https://testm-bfcc.azurewebsites.net/api/messages",
+      "type": "endpoint",
+      "name": "production",
+      "id": "4"
+    },
+    {
+      "instrumentationKey": "eWamtAVa5TNf2OwUIQUzrw==!fD433L7HtVpq/72SDb5npbDhUXJHlf9Mkmog0wD0TVVX3b28PoVS3KkjMG6zoh/v",
+      "applicationId": "1170c292-caa8-4ded-9295-ee285b7a2653",
+      "apiKeys": {},
+      "tenantId": "eaba9aa8-58e4-478b-855b-b2baaaf8ceb2",
+      "subscriptionId": "3b4881dd-ca10-4416-9558-8475b172ada3",
+      "resourceGroup": "RamaiahWebAppBot",
+      "serviceName": "Testmlmwumo",
+      "type": "appInsights",
+      "id": "5"
+    },
+    {
+      "appId": "6c17e8ff-5bee-4ae4-9541-7078d6edbaa8",
+      "authoringKey": "uDNTbh4URGdlwiFHr8TVvg==!DvYuwIqRbrV1CCxWUijJ1wQydNMf7EqS+HNibgquhYchp/eWDCurJmCZDyOCOs9k",
+      "version": "0.1",
+      "region": "westus",
+      "type": "luis",
+      "name": "BasicBotLuisApplication",
+      "id": "6"
+    }
+  ]
+}
