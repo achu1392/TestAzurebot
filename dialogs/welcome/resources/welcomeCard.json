@@ -39,7 +39,13 @@
     },
     {
       "type": "Action.Submit",
-      "title": "Tomato"
+      "title": "Tomato",
+      "data": {
+        "type": [
+          "string",
+          "object"
+        ]
+      }
      
     }
   ]

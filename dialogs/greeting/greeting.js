@@ -150,7 +150,7 @@ class Greeting extends ComponentDialog {
         if (value.length >= NAME_LENGTH_MIN) {
             return VALIDATION_SUCCEEDED;
         } else {
-            await validatorContext.context.sendActivity(`Names need to be at least ${ NAME_LENGTH_MIN } characters long.`);
+            await validatorContext.context.sendActivity(`Names need to be at least ${ NAME_LENGTH_MIN } characters long.`+ 'validatorContext  ' + validatorContext);
             return VALIDATION_FAILED;
         }
     }
