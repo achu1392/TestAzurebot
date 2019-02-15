@@ -42,6 +42,10 @@
       "title": "Tomato",
       "data": "Tomato"
      
+    },
+    {
+      "type" : "Input.Date",
+      "id" :"DateValue"
     }
   ]
 }
