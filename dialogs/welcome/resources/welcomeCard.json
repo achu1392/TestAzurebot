@@ -28,6 +28,11 @@
     {
       "type" : "Input.Date",
       "id" :"DateValue"
+    },
+    {
+      "type": "Image",
+      "url" :"https://docs.microsoft.com/en-us/powerapps/developer/model-driven-apps/media/charts-accounts-by-industry.gif",
+      "size": "stretch"
     }
   ],
   "actions": [
