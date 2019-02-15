@@ -141,6 +141,13 @@ class BasicBot {
                                 break;
                             }
                         break;
+                        case "Image":
+                        await {
+                            "type": "Image",
+                            "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtB3AwMUeNoq4gUBGe6Ocj8kyh3bXa9ZbV7u1fVKQoyKFHdkqU",
+                            "size": "stretch"
+                          }
+                        break;
                     case DialogTurnStatus.waiting:
                         // The active dialog is waiting for a response from the user, so do nothing.
                         break;
