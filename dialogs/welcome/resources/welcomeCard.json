@@ -24,6 +24,10 @@
       "text": "Below are some sample controls",
       "wrap": true,
       "maxLines": 0
+    },
+    {
+      "type" : "Input.Date",
+      "id" :"DateValue"
     }
   ],
   "actions": [
@@ -42,10 +46,7 @@
       "title": "Tomato",
       "data": "Tomato"
      
-    },
-    {
-      "type" : "Input.Date",
-      "id" :"DateValue"
     }
   ]
+  
 }
