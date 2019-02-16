@@ -42,15 +42,9 @@
       "url": "https://www.google.com"
     },
     {
-      "type": "Action.OpenUrl",
-      "title": "Go to facebook",
-      "url": "https://www.facebook.com"
-    },
-    {
       "type": "Action.Submit",
       "title": "Tomato",
       "data": "Tomato"
-     
     }
   ]
   
