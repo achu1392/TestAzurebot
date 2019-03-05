@@ -93,7 +93,7 @@ class Greeting extends ComponentDialog {
         }
         if (!userProfile.name) {
             // prompt for name, if missing
-            return await step.prompt(NAME_PROMPT, 'Choose the colour of the cake?') + 
+            return await step.prompt(NAME_PROMPT, 'Choose the color of the cake?') + 
                     `"actions": [
                         {
                           "type": "Action.OpenUrl",
