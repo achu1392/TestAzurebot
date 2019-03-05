@@ -93,7 +93,20 @@ class Greeting extends ComponentDialog {
         }
         if (!userProfile.name) {
             // prompt for name, if missing
-            return await step.prompt(NAME_PROMPT, 'May i know what is your name?');
+            return await step.prompt(NAME_PROMPT, 'Choose the colour of the cake?') + 
+                    `"actions": [
+                        {
+                          "type": "Action.OpenUrl",
+                          "title": "Go to google",
+                          "url": "https://www.google.com"
+                        },
+                        {
+                          "type": "Action.Submit",
+                          "title": "Potato",
+                          "data": "Potato"
+                        }
+                      ]`
+                      ;
         } else {
             return await step.next();
         }
