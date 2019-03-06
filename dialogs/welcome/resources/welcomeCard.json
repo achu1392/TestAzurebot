@@ -21,7 +21,7 @@
       
         "type" : "Input.Choice",
         "title" : "Choose a shape",
-        "value":"Triangle Rectangle  Square"
+        "value":"Triangle"
       
     },
     
@@ -32,23 +32,23 @@
       "text": "Choose the colour for your cake ! ",
       "wrap": true,
       "maxLines": 0
-    },
-    {
-      "type": "Image",
-      "url" :"https://docs.microsoft.com/en-us/powerapps/developer/model-driven-apps/media/charts-accounts-by-industry.gif",
-      "size": "stretch"
     }
   ],
   "actions": [
     {
-      "type": "Action.OpenUrl",
-      "title": "Go to google",
-      "url": "https://www.google.com"
+      "type": "Action.Submit",
+      "title": "Blue",
+      "data": "Blue"
     },
     {
       "type": "Action.Submit",
-      "title": "Potato",
-      "data": "Potato"
+      "title": "Yellow",
+      "data": "Yellow"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Green",
+      "data": "Green"
     }
   ]
   

@@ -119,7 +119,7 @@ class Greeting extends ComponentDialog {
             await this.userProfileAccessor.set(step.context, userProfile);
         }
         if (!userProfile.city) {
-            return await step.prompt(CITY_PROMPT, `Hello ${ userProfile.name }, what city do you live in?`);
+            return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape, what colour cake do you need?`);
         } else {
             return await step.next();
         }
