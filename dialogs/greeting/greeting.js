@@ -5,6 +5,7 @@
 
 // Import required Bot Builder
 const { ComponentDialog, WaterfallDialog, TextPrompt } = require('botbuilder-dialogs');
+const { ActivityTypes, CardFactory } = require('botbuilder');
 
 // User state for greeting dialog
 const { UserProfile } = require('./userProfile');
@@ -95,7 +96,7 @@ class Greeting extends ComponentDialog {
         if (!userProfile.name) {
             // prompt for name, if missing
            const Card = CardFactory.adaptiveCard(WelcomeCard);
-             await step.context.sendActivity({ attachments: [Card] });
+             await step.sendActivity({ attachments: [Card] });
             return await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
         } else {
             return await step.next();
