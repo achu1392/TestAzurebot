@@ -94,8 +94,8 @@ class Greeting extends ComponentDialog {
         }
         if (!userProfile.name) {
             // prompt for name, if missing
-           const welcomeCard = CardFactory.adaptiveCard(WelcomeCard);
-             await step.context.sendActivity({ attachments: [welcomeCard] });
+           const Card = CardFactory.adaptiveCard(WelcomeCard);
+             await step.context.sendActivity({ attachments: [Card] });
             return await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
         } else {
             return await step.next();
