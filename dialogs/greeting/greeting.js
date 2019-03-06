@@ -8,6 +8,7 @@ const { ComponentDialog, WaterfallDialog, TextPrompt } = require('botbuilder-dia
 
 // User state for greeting dialog
 const { UserProfile } = require('./userProfile');
+const { WelcomeCard } = require('./../welcome');
 
 // Minimum length requirements for city and name
 const CITY_LENGTH_MIN = 5;
@@ -93,6 +94,8 @@ class Greeting extends ComponentDialog {
         }
         if (!userProfile.name) {
             // prompt for name, if missing
+            const welcomeCard = CardFactory.adaptiveCard(WelcomeCard);
+            await context.sendActivity({ attachments: [welcomeCard] });
             return await step.prompt(NAME_PROMPT, 'Choose the color of the cake?')  ;
         } else {
             return await step.next();
