@@ -5,8 +5,7 @@
   "body": [
     {
       "type": "Image",
-      "url" :"https://images-na.ssl-images-amazon.com/images/I/61y9SUOEqOL._SL1000_.jpg",
-      "data": "Trimmer",
+      "url" :"https://www.brandcrowd.com/gallery/brands/pictures/picture14323705647889.png",
       "size": "stretch"
     },
     {
@@ -14,15 +13,23 @@
       "spacing": "medium",
       "size": "default",
       "weight": "bolder",
-      "text": "Sample Block!",
+      "text": "Choose the shape of your cake!",
       "wrap": true,
       "maxLines": 0
     },
     {
+      
+        "type" : "Input.ChoiceSet",
+        "id" :"Shape",
+        "choices":["Triangle","Rectangle","Square"]
+      
+    },
+    
+    {
       "type": "TextBlock",
       "size": "default",
       "isSubtle": "yes",
-      "text": "Below are some sample controls",
+      "text": "Choose the colour for your cake ! ",
       "wrap": true,
       "maxLines": 0
     },
