@@ -1,0 +1,19 @@
+{
+    "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Triangle",
+      "data": "Triangle"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Rectangle",
+      "data": "Rectangle"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Rectangle",
+      "data": "Rectangle"
+    }
+  ]
+}
