@@ -1,0 +1,35 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+
+    {
+      "type": "TextBlock",
+      "spacing": "medium",
+      "size": "default",
+      "weight": "bolder",
+      "text": "Choose the shape of your cake!",
+      "wrap": true,
+      "maxLines": 0
+    }
+  ],
+    "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Triangle",
+      "data": "Triangle"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Rectangle",
+      "data": "Rectangle"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Rectangle",
+      "data": "Rectangle"
+    }
+  ]  
+}
+

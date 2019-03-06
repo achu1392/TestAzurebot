@@ -10,6 +10,7 @@ const { ActivityTypes, CardFactory } = require('botbuilder');
 // User state for greeting dialog
 const { UserProfile } = require('./userProfile');
 const { WelcomeCard } = require('./../welcome');
+const {ColourCard} = require('./../colours')
 
 // Minimum length requirements for city and name
 const CITY_LENGTH_MIN = 5;
@@ -95,27 +96,9 @@ class Greeting extends ComponentDialog {
         }
         if (!userProfile.name) {
             // prompt for name, if missing
-           const Card = CardFactory.adaptiveCard(WelcomeCard);
+           const Card = CardFactory.adaptiveCard(ColourCard);
             await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
-            return   await step.context.sendActivity({ "attachments": [{
-                "actions": [
-                    {
-                      "type": "Action.Submit",
-                      "title": "Triangle",
-                      "data": "Triangle"
-                    },
-                    {
-                      "type": "Action.Submit",
-                      "title": "Rectangle",
-                      "data": "Rectangle"
-                    },
-                    {
-                      "type": "Action.Submit",
-                      "title": "Rectangle",
-                      "data": "Rectangle"
-                    }
-                  ]
-            }] });
+            return  await step.context.sendActivity({ attachments: [Card] });
         
         } else {
             return await step.next();
