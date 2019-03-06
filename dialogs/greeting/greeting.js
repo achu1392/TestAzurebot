@@ -96,8 +96,27 @@ class Greeting extends ComponentDialog {
         if (!userProfile.name) {
             // prompt for name, if missing
            const Card = CardFactory.adaptiveCard(WelcomeCard);
-            return await step.context.sendActivity({ attachments: [Card] });
-           // return await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
+            await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
+            return   await step.context.sendActivity({ attachments: [{
+                "actions": [
+                    {
+                      "type": "Action.Submit",
+                      "title": "Triangle",
+                      "data": "Triangle"
+                    },
+                    {
+                      "type": "Action.Submit",
+                      "title": "Rectangle",
+                      "data": "Rectangle"
+                    },
+                    {
+                      "type": "Action.Submit",
+                      "title": "Rectangle",
+                      "data": "Rectangle"
+                    }
+                  ]
+            }] });
+        
         } else {
             return await step.next();
         }
