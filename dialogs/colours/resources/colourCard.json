@@ -9,7 +9,7 @@
       "spacing": "medium",
       "size": "default",
       "weight": "bolder",
-      "text": "Choose the shape of your cake!",
+      "text": "Choose the colour of your cake!",
       "wrap": true,
       "maxLines": 0
     }
@@ -17,18 +17,18 @@
     "actions": [
     {
       "type": "Action.Submit",
-      "title": "Triangle",
-      "data": "Triangle"
+      "title": "Blue",
+      "data": "Blue"
     },
     {
       "type": "Action.Submit",
-      "title": "Rectangle",
-      "data": "Rectangle"
+      "title": "Yellow",
+      "data": "Yellow"
     },
     {
       "type": "Action.Submit",
-      "title": "Rectangle",
-      "data": "Rectangle"
+      "title": "Red",
+      "data": "Red"
     }
   ]  
 }
