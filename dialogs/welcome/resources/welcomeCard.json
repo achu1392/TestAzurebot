@@ -19,9 +19,9 @@
     },
     {
       
-        "type" : "Input.ChoiceSet",
-        "id" :"Shape",
-        "choices":["Triangle","Rectangle","Square"]
+        "type" : "Input.Choice",
+        "title" : "Choose a shape",
+        "value":"Triangle Rectangle  Square"
       
     },
     
