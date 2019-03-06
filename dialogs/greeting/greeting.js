@@ -94,9 +94,9 @@ class Greeting extends ComponentDialog {
         }
         if (!userProfile.name) {
             // prompt for name, if missing
-           // const welcomeCard = CardFactory.adaptiveCard(WelcomeCard);
-           // return await context.sendActivity({ attachments: [welcomeCard] });
-            return await step.prompt(NAME_PROMPT, 'Choose the color of the cake?')  ;
+           const welcomeCard = CardFactory.adaptiveCard(WelcomeCard);
+             await step.context.sendActivity({ attachments: [welcomeCard] });
+            return await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
         } else {
             return await step.next();
         }
@@ -180,8 +180,10 @@ class Greeting extends ComponentDialog {
     async greetUser(step) {
         const userProfile = await this.userProfileAccessor.get(step.context);
         // Display to the user their profile information and end dialog
-        await step.context.sendActivity(`Hi ${ userProfile.name }, from ${ userProfile.city }, nice to meet you!`);
-        await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
+        await step.context.sendActivity(`Here is your cake in ${ userProfile.name } Shape and  ${ userProfile.city } colour!`);
+        const welcomeCard = CardFactory.adaptiveCard(WelcomeCard);
+        await step.context.sendActivity({ attachments: [welcomeCard] });
+        //await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
         return await step.endDialog();
     }
 }
