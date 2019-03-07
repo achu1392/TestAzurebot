@@ -4,7 +4,9 @@
 // greeting.js defines the greeting dialog
 
 // Import required Bot Builder
-const { ComponentDialog, WaterfallDialog, TextPrompt } = require('botbuilder-dialogs');
+const { ComponentDialog, WaterfallDialog, TextPrompt} = require('botbuilder-dialogs');
+
+const { ColourCardFactory, CardFactory } = require('botbuilder');
 
 // User state for greeting dialog
 const { UserProfile } = require('./userProfile');
@@ -47,9 +49,9 @@ class Greeting extends ComponentDialog {
         // as a water fall dialog executes steps registered in order
         this.addDialog(new WaterfallDialog(PROFILE_DIALOG, [
             this.initializeStateStep.bind(this),
-            this.promptForNameStep.bind(this),
-            this.promptForCityStep.bind(this),
-            this.displayGreetingStep.bind(this)
+            this.promptForNameStep.bind(this)
+            // this.promptForCityStep.bind(this),
+            // this.displayGreetingStep.bind(this)
         ]));
 
         // Add text prompts for name and city
