@@ -117,21 +117,25 @@ class Greeting extends ComponentDialog {
     async promptForCityStep(step) {
         // save name, if prompted for
         const userProfile = await this.userProfileAccessor.get(step.context);
-        if (userProfile.name === undefined && step.result) {
-            let lowerCaseName = step.result;
-            // capitalize and set name
-            userProfile.name = lowerCaseName.charAt(0).toUpperCase() + lowerCaseName.substr(1);
-            await this.userProfileAccessor.set(step.context, userProfile);
-        }
-        if (!userProfile.city) {
-            const colCard = CardFactory.adaptiveCard(ColourCard);
-            await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape !! `);
+        // if (userProfile.name === undefined && step.result) {
+        //     let lowerCaseName = step.result;
+        //     // capitalize and set name
+        //     userProfile.name = lowerCaseName.charAt(0).toUpperCase() + lowerCaseName.substr(1);
+        //     await this.userProfileAccessor.set(step.context, userProfile);
+        // }
+        // if (!userProfile.city) {
+        //     const colCard = CardFactory.adaptiveCard(ColourCard);
+        //     await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape !! `);
           
-            //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
-            return  await step.context.sendActivity({ attachments: [colCard] });
-        } else {
-            return await step.next();
-        }
+        //     //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
+        //     return  await step.context.sendActivity({ attachments: [colCard] });
+        // } else {
+        //     return await step.next();
+        // }
+        await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape !! `);
+          
+        //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
+        return  await step.context.sendActivity({ attachments: [colCard] });
         
     }
     /**
