@@ -97,10 +97,11 @@ class Greeting extends ComponentDialog {
         }
         if (!userProfile.name) {
             // prompt for name, if missing
-            const Card = CardFactory.adaptiveCard(ShapeCard);
+          //  const Card = CardFactory.adaptiveCard(ShapeCard);
             //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
-            return  await step.context.sendActivity({ attachments: [Card] });
-        
+          //  return  await step.context.sendActivity({ attachments: [Card] });
+          const colCard = CardFactory.adaptiveCard(ColourCard);
+        return  await step.context.sendActivity({ attachments: [colCard] });
         } else {
             return await step.next();
         }
