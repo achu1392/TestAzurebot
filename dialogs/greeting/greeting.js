@@ -138,7 +138,7 @@ class Greeting extends ComponentDialog {
         //     return  await step.context.sendActivity({ attachments: [colCard] });
         // }
        
-        
+        return await step.context.sendActivity(`Here is your cake in  colour!`);
     }
     /**
      * Waterfall Dialog step functions.
@@ -157,10 +157,10 @@ class Greeting extends ComponentDialog {
             await this.userProfileAccessor.set(step.context, userProfile);
         }
         const yellowCake = CardFactory.adaptiveCard(YellowCakeCard);
-        await step.context.sendActivity(`Here is your cake in ${ userProfile.name } Shape and  ${ userProfile.city } colour!`);
-        
-        await step.context.sendActivity({ attachments: [yellowCake] });
-        return await this.greetUser(step);
+        return await step.context.sendActivity(`Here is your cake in  colour!`);
+       // ${ userProfile.name } Shape and  ${ userProfile.city }
+       // await step.context.sendActivity({ attachments: [yellowCake] });
+      //  return await this.greetUser(step);
         
         //await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
       //  return await step.endDialog();
