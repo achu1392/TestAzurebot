@@ -27,8 +27,8 @@
       },
       {
         "type": "Action.Submit",
-        "title": "Rectangle",
-        "data": "Rectangle"
+        "title": "Round",
+        "data": "Round"
       }
     ]  
   }

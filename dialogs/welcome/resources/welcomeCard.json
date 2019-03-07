@@ -7,48 +7,6 @@
       "type": "Image",
       "url" :"https://www.brandcrowd.com/gallery/brands/pictures/picture14323705647889.png",
       "size": "stretch"
-    },
-    {
-      "type": "TextBlock",
-      "spacing": "medium",
-      "size": "default",
-      "weight": "bolder",
-      "text": "Choose the shape of your cake!",
-      "wrap": true,
-      "maxLines": 0
-    },
-    {
-      
-        "type" : "Input.Choice",
-        "title" : "Choose a shape",
-        "value":"Triangle"
-      
-    },
-    
-    {
-      "type": "TextBlock",
-      "size": "default",
-      "isSubtle": "yes",
-      "text": "Choose the colour for your cake ! ",
-      "wrap": true,
-      "maxLines": 0
-    }
-  ],
-  "actions": [
-    {
-      "type": "Action.Submit",
-      "title": "Blue",
-      "data": "Blue"
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Yellow",
-      "data": "Yellow"
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Green",
-      "data": "Green"
     }
   ]
   
