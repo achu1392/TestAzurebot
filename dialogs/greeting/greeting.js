@@ -130,7 +130,11 @@ class Greeting extends ComponentDialog {
             //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
             return  await step.context.sendActivity({ attachments: [colCard] });
         } else {
-            return await step.next();
+            const colCard = CardFactory.adaptiveCard(ColourCard);
+         //   await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape !! `);
+          
+            //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
+            return  await step.context.sendActivity({ attachments: [colCard] });
         }
        
         
