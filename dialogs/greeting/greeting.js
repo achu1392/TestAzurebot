@@ -5,14 +5,11 @@
 
 // Import required Bot Builder
 const { ComponentDialog, WaterfallDialog, TextPrompt } = require('botbuilder-dialogs');
-const { ActivityTypes, CardFactory } = require('botbuilder');
 
 // User state for greeting dialog
 const { UserProfile } = require('./userProfile');
-const { WelcomeCard } = require('./../welcome');
-const {ColourCard} = require('./../colours')
-const{ShapeCard} = require('./../shapes')
-const {YellowCakeCard} = require('./../yellowCake')
+const {ShapeCard} = require('./../shapes');
+const {ColourCard} = require('./../colours');
 // Minimum length requirements for city and name
 const CITY_LENGTH_MIN = 5;
 const NAME_LENGTH_MIN = 3;
@@ -87,25 +84,23 @@ class Greeting extends ComponentDialog {
      * Using a text prompt, prompt the user for their name.
      * Only prompt if we don't have this information already.
      *
-     * @param 0{WaterfallStepContext} step contextual information for the current step being executed
+     * @param {WaterfallStepContext} step contextual information for the current step being executed
      */
     async promptForNameStep(step) {
         const userProfile = await this.userProfileAccessor.get(step.context);
-       // if we have everything we need, greet user and return
+        // if we have everything we need, greet user and return
         if (userProfile !== undefined && userProfile.name !== undefined && userProfile.city !== undefined) {
             return await this.greetUser(step);
         }
         if (!userProfile.name) {
             // prompt for name, if missing
-          //  const Card = CardFactory.adaptiveCard(ShapeCard);
-            //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
-          //  return  await step.context.sendActivity({ attachments: [Card] });
-          const colCard = CardFactory.adaptiveCard(ColourCard);
-        return  await step.context.sendActivity({ attachments: [colCard] });
+            // return await step.prompt(NAME_PROMPT, 'What is your name?');
+            const shape = CardFactory.adaptiveCard(ShapeCard);
+            return   await step.context.sendActivity({ attachments: [shape] });
+           // return await step.context.prompt()
         } else {
             return await step.next();
         }
-        
     }
     /**
      * Waterfall Dialog step functions.
@@ -117,28 +112,20 @@ class Greeting extends ComponentDialog {
      */
     async promptForCityStep(step) {
         // save name, if prompted for
-        // const userProfile = await this.userProfileAccessor.get(step.context);
-        // if (userProfile.name === undefined && step.result) {
-        //     let lowerCaseName = step.result;
-        //     // capitalize and set name
-        //     userProfile.name = lowerCaseName.charAt(0).toUpperCase() + lowerCaseName.substr(1);
-        //     await this.userProfileAccessor.set(step.context, userProfile);
-        // }
-        //if (!userProfile.city) {
-           // const colCard = CardFactory.adaptiveCard(ColourCard);
-         //   await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape !! `);
-          
-            //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
-            //return  await step.context.sendActivity({ attachments: [colCard] });
-        // } else {
-        //     const colCard = CardFactory.adaptiveCard(ColourCard);
-        //  //   await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape !! `);
-          
-        //     //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
-        //     return  await step.context.sendActivity({ attachments: [colCard] });
-        // }
-       
-        return await step.context.sendActivity(`Here is your cake in  colour!`);
+        const userProfile = await this.userProfileAccessor.get(step.context);
+        if (userProfile.name === undefined && step.result) {
+            let lowerCaseName = step.result;
+            // capitalize and set name
+            userProfile.name = lowerCaseName.charAt(0).toUpperCase() + lowerCaseName.substr(1);
+            await this.userProfileAccessor.set(step.context, userProfile);
+        }
+        if (!userProfile.city) {
+           // return await step.prompt(CITY_PROMPT, `Hello ${ userProfile.name }, what city do you live in?`);
+           const colour = CardFactory.adaptiveCard(ColourCard);
+           return  await step.context.sendActivity({ attachments: [colour] });
+        } else {
+            return await step.next();
+        }
     }
     /**
      * Waterfall Dialog step functions.
@@ -156,14 +143,7 @@ class Greeting extends ComponentDialog {
             userProfile.city = lowerCaseCity.charAt(0).toUpperCase() + lowerCaseCity.substr(1);
             await this.userProfileAccessor.set(step.context, userProfile);
         }
-        const yellowCake = CardFactory.adaptiveCard(YellowCakeCard);
-        return await step.context.sendActivity(`Here is your cake in  colour!`);
-       // ${ userProfile.name } Shape and  ${ userProfile.city }
-       // await step.context.sendActivity({ attachments: [yellowCake] });
-      //  return await this.greetUser(step);
-        
-        //await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
-      //  return await step.endDialog();
+        return await this.greetUser(step);
     }
     /**
      * Validator function to verify that user name meets required constraints.
@@ -176,7 +156,7 @@ class Greeting extends ComponentDialog {
         if (value.length >= NAME_LENGTH_MIN) {
             return VALIDATION_SUCCEEDED;
         } else {
-            await validatorContext.context.sendActivity(`Names need to be at least ${ NAME_LENGTH_MIN } characters long.`+ 'validatorContext  ' + JSON.stringify(validatorContext));
+            await validatorContext.context.sendActivity(`Names need to be at least ${ NAME_LENGTH_MIN } characters long.`);
             return VALIDATION_FAILED;
         }
     }
@@ -203,10 +183,8 @@ class Greeting extends ComponentDialog {
     async greetUser(step) {
         const userProfile = await this.userProfileAccessor.get(step.context);
         // Display to the user their profile information and end dialog
-        await step.context.sendActivity(`Here is your cake in ${ userProfile.name } Shape and  ${ userProfile.city } colour!`);
-        const welcomeCard = CardFactory.adaptiveCard(WelcomeCard);
-        await step.context.sendActivity({ attachments: [welcomeCard] });
-        //await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
+        await step.context.sendActivity(`Hi ${ userProfile.name }, from ${ userProfile.city }, nice to meet you!`);
+        await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
         return await step.endDialog();
     }
 }
