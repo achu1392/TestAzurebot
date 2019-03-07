@@ -92,9 +92,9 @@ class Greeting extends ComponentDialog {
     async promptForNameStep(step) {
         const userProfile = await this.userProfileAccessor.get(step.context);
        // if we have everything we need, greet user and return
-        // if (userProfile !== undefined && userProfile.name !== undefined && userProfile.city !== undefined) {
-        //     return await this.greetUser(step);
-        // }
+        if (userProfile !== undefined && userProfile.name !== undefined && userProfile.city !== undefined) {
+            return await this.greetUser(step);
+        }
         if (!userProfile.name) {
             // prompt for name, if missing
             const Card = CardFactory.adaptiveCard(ShapeCard);
@@ -117,25 +117,22 @@ class Greeting extends ComponentDialog {
     async promptForCityStep(step) {
         // save name, if prompted for
         const userProfile = await this.userProfileAccessor.get(step.context);
-        // if (userProfile.name === undefined && step.result) {
-        //     let lowerCaseName = step.result;
-        //     // capitalize and set name
-        //     userProfile.name = lowerCaseName.charAt(0).toUpperCase() + lowerCaseName.substr(1);
-        //     await this.userProfileAccessor.set(step.context, userProfile);
-        // }
-        // if (!userProfile.city) {
-        //     const colCard = CardFactory.adaptiveCard(ColourCard);
-        //     await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape !! `);
+        if (userProfile.name === undefined && step.result) {
+            let lowerCaseName = step.result;
+            // capitalize and set name
+            userProfile.name = lowerCaseName.charAt(0).toUpperCase() + lowerCaseName.substr(1);
+            await this.userProfileAccessor.set(step.context, userProfile);
+        }
+        if (!userProfile.city) {
+            const colCard = CardFactory.adaptiveCard(ColourCard);
+         //   await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape !! `);
           
-        //     //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
-        //     return  await step.context.sendActivity({ attachments: [colCard] });
-        // } else {
-        //     return await step.next();
-        // }
-        await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape !! `);
-          
-        //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
-        return  await step.context.sendActivity({ attachments: [colCard] });
+            //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
+            return  await step.context.sendActivity({ attachments: [colCard] });
+        } else {
+            return await step.next();
+        }
+       
         
     }
     /**
@@ -148,19 +145,20 @@ class Greeting extends ComponentDialog {
     async displayGreetingStep(step) {
         // Save city, if prompted for
         const userProfile = await this.userProfileAccessor.get(step.context);
-        // if (userProfile.city === undefined && step.result) {
-        //     let lowerCaseCity = step.result;
-        //     // capitalize and set city
-        //     userProfile.city = lowerCaseCity.charAt(0).toUpperCase() + lowerCaseCity.substr(1);
-        //     await this.userProfileAccessor.set(step.context, userProfile);
-        // }
-        // return await this.greetUser(step);
+        if (userProfile.city === undefined && step.result) {
+            let lowerCaseCity = step.result;
+            // capitalize and set city
+            userProfile.city = lowerCaseCity.charAt(0).toUpperCase() + lowerCaseCity.substr(1);
+            await this.userProfileAccessor.set(step.context, userProfile);
+        }
         const yellowCake = CardFactory.adaptiveCard(YellowCakeCard);
         await step.context.sendActivity(`Here is your cake in ${ userProfile.name } Shape and  ${ userProfile.city } colour!`);
         
         await step.context.sendActivity({ attachments: [yellowCake] });
+        return await this.greetUser(step);
+        
         //await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
-        return await step.endDialog();
+      //  return await step.endDialog();
     }
     /**
      * Validator function to verify that user name meets required constraints.
