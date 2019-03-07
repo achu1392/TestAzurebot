@@ -87,7 +87,7 @@ class Greeting extends ComponentDialog {
      * Using a text prompt, prompt the user for their name.
      * Only prompt if we don't have this information already.
      *
-     * @param {WaterfallStepContext} step contextual information for the current step being executed
+     * @param 0{WaterfallStepContext} step contextual information for the current step being executed
      */
     async promptForNameStep(step) {
         const userProfile = await this.userProfileAccessor.get(step.context);
@@ -124,11 +124,11 @@ class Greeting extends ComponentDialog {
         //     await this.userProfileAccessor.set(step.context, userProfile);
         // }
         //if (!userProfile.city) {
-            const colCard = CardFactory.adaptiveCard(ColourCard);
+           // const colCard = CardFactory.adaptiveCard(ColourCard);
          //   await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape !! `);
           
             //await step.prompt(NAME_PROMPT, 'Choose the shape of the cake?')  ;
-            return  await step.context.sendActivity({ attachments: [colCard] });
+            //return  await step.context.sendActivity({ attachments: [colCard] });
         // } else {
         //     const colCard = CardFactory.adaptiveCard(ColourCard);
         //  //   await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } shape !! `);
