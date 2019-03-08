@@ -50,8 +50,8 @@ class Greeting extends ComponentDialog {
             this.initializeStateStep.bind(this),
             this.promptForNameStep.bind(this),
             this.promptForCityStep.bind(this),
-           // this.displayGreetingStep.bind(this),
-            this.displayGreetingStep2.bind(this)
+           this.displayGreetingStep.bind(this)
+            //this.displayGreetingStep2.bind(this)
         ]));
 
         // Add text prompts for name and city
@@ -119,10 +119,10 @@ class Greeting extends ComponentDialog {
             await this.userProfileAccessor.set(step.context, userProfile);
         }
         if (!userProfile.city) {
-            await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
+           return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
            
            // return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
-           return await step.endDialog();
+          // return await step.endDialog();
         } else {
             return await step.next();
         }
