@@ -123,7 +123,7 @@ class Greeting extends ComponentDialog {
 //             const ycard = CardFactory.adaptiveCard(YellowCard);
 //         await step.context.sendActivity({ attachments: [ycard] });
 //  return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
-return this.greetUser(step);
+return this.greetUser2(step);
         //   return await step.endDialog();
            // return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
           // return await step.endDialog();
@@ -209,7 +209,7 @@ return this.greetUser(step);
     async greetUser2(step) {
         const userProfile = await this.userProfileAccessor.get(step.context);
         // Display to the user their profile information and end dialog
-        await step.context.sendActivity(`You have selected  ${ userProfile.name } shape  of ${ userProfile.city } colour.Here is your cake!`);
+        await step.context.sendActivity(`You have selected  ${ userProfile.name } shape .Here is your cake!`);
         const ycard = CardFactory.adaptiveCard(YellowCard);
         await step.context.sendActivity({ attachments: [ycard] });
       //  await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
