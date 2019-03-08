@@ -24,6 +24,7 @@ const CITY_PROMPT = 'cityPrompt';
 
 const VALIDATION_SUCCEEDED = true;
 const VALIDATION_FAILED = !VALIDATION_SUCCEEDED;
+var count =0;
 
 /**
  * Demonstrates the following concepts:
@@ -92,7 +93,7 @@ class Greeting extends ComponentDialog {
         const userProfile = await this.userProfileAccessor.get(step.context);
         // if we have everything we need, greet user and return
         if (userProfile !== undefined && userProfile.name !== undefined && userProfile.city !== undefined) {
-            return await this.greetUser(step,1);
+            return await this.greetUser(step);
         }
         if (!userProfile.name) {
             // prompt for name, if missing
@@ -123,7 +124,7 @@ class Greeting extends ComponentDialog {
 //             const ycard = CardFactory.adaptiveCard(YellowCard);
 //         await step.context.sendActivity({ attachments: [ycard] });
 //  return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
-return this.greetUser(step,1);
+return this.greetUser(step);
         //   return await step.endDialog();
            // return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
           // return await step.endDialog();
@@ -147,7 +148,7 @@ return this.greetUser(step,1);
             userProfile.city = lowerCaseCity.charAt(0).toUpperCase() + lowerCaseCity.substr(1);
             await this.userProfileAccessor.set(step.context, userProfile);
         }
-        return await this.greetUser(step,2);
+        return await this.greetUser(step);
     }
     /**
      * Validator function to verify that user name meets required constraints.
@@ -184,18 +185,13 @@ return this.greetUser(step,1);
      *
      * @param {WaterfallStepContext} step contextual information for the current step being executed
      */
-    async greetUser(step,count) {
+    async greetUser(step) {
         const userProfile = await this.userProfileAccessor.get(step.context);
-        console.log(count);
         // Display to the user their profile information and end dialog
-        if (count==="1"){
+        if (count === 0){
         await step.context.sendActivity(`You have selected  ${ userProfile.name } shape . Choose a colour from the below list!!`);
         const card = CardFactory.adaptiveCard(ColourCard);
         await step.context.sendActivity({ attachments: [card] });
-        } else {
-            await step.context.sendActivity(`You have selected  ${ userProfile.name } shape .Here is your cake!`);
-            const ycard = CardFactory.adaptiveCard(YellowCard);
-            await step.context.sendActivity({ attachments: [ycard] });
         }
       //  await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
         return await step.endDialog();
