@@ -15,60 +15,46 @@
       "wrap": true
     },
     {
-      "type": "Input.ChoiceSet",
-      "id": "CakeShape",
-      "style": "expanded",
-      "choices": [
-        {
-          "title": "Triangle",
-          "value": "triangle"
-        },
-        {
-          "title": "Round",
-          "value": "round"
-        },
-        {
-          "title": "Square",
-          "value": "square"
-        }
-      ]
+      "type": "Action.Submit",
+      "title": "Triangle",
+      "data": "Triangle"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Square",
+      "data": "Square"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Round",
+      "data": "Round"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Choose the colour of your cake?",
+      "size": "medium",
+      "wrap": true
     }
 
   ],
   "actions": [
     {
-      "type": "Action.ShowCard",
-      "title": "Cake Colour",
-      "card": {
-        "type": "AdaptiveCard",
-        "body": [
-          {
-            "type": "TextBlock",
-            "text": "Choose the colour of your cake?",
-            "size": "medium",
-            "wrap": true
-          }
-        ],
-        "actions": [
-          {
-            "type": "Action.Submit",
-            "title": "Blue",
-            "data": "Blue"
-          },
-          {
-            "type": "Action.Submit",
-            "title": "Yellow",
-            "data": "Yellow"
-          },
-          {
-            "type": "Action.Submit",
-            "title": "Red",
-            "data": "Red"
-          }
-        ]
-      }
+      "type": "Action.Submit",
+      "title": "Blue",
+      "data": "Blue"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Yellow",
+      "data": "Yellow"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Red",
+      "data": "Red"
     }
   ]
+  
   
   
 }
