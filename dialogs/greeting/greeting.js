@@ -9,6 +9,7 @@ const { ComponentDialog, WaterfallDialog, TextPrompt } = require('botbuilder-dia
 // User state for greeting dialog
 const { UserProfile } = require('./userProfile');
 const {ColourCard} = require('./../colours');
+const {YellowCard} = require('./../yellowCake')
 const { ActivityTypes, CardFactory } = require('botbuilder');
 // Minimum length requirements for city and name
 const CITY_LENGTH_MIN = 5;
@@ -117,6 +118,8 @@ class Greeting extends ComponentDialog {
             await this.userProfileAccessor.set(step.context, userProfile);
         }
         if (!userProfile.city) {
+            const ycard = CardFactory.adaptiveCard(YellowCard);
+        await step.context.sendActivity({ attachments: [ycard] });
             return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
         } else {
             return await step.next();
