@@ -123,9 +123,9 @@ class Greeting extends ComponentDialog {
             await this.userProfileAccessor.set(step.context, userProfile);
         }
         if (!userProfile.city) {
-            await step.prompt(CITY_PROMPT, `You have chosen ${ userProfile.name } Shape . Choose the colour for your colour from the inventory section`);
-           const colour = CardFactory.adaptiveCard(ColourCard);
-           return  await step.context.sendActivity({ attachments: [colour] });
+           return await step.prompt(CITY_PROMPT, `You have chosen ${ userProfile.name } Shape . Choose the colour for your colour from the inventory section`);
+          // const colour = CardFactory.adaptiveCard(ColourCard);
+           //return  await step.context.sendActivity({ attachments: [colour] });
         } else {
             return await step.next();
         }
