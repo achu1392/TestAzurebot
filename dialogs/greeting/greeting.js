@@ -56,8 +56,8 @@ class Greeting extends ComponentDialog {
         ]));
 
         // Add text prompts for name and city
-        this.addDialog(new TextPrompt(NAME_PROMPT, this.validateName));
-        this.addDialog(new TextPrompt(CITY_PROMPT, this.validateCity));
+        //this.addDialog(new TextPrompt(NAME_PROMPT, this.validateName));
+        //this.addDialog(new TextPrompt(CITY_PROMPT, this.validateCity));
 
         // Save off our state accessor for later use
         this.userProfileAccessor = userProfileAccessor;

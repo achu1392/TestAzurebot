@@ -14,7 +14,10 @@
       "size": "medium",
       "wrap": true
     },
+   
     {
+      "actions":[
+        {
       "type": "Action.Submit",
       "title": "Triangle",
       "data": "Triangle"
@@ -28,13 +31,16 @@
       "type": "Action.Submit",
       "title": "Round",
       "data": "Round"
-    },
-    {
-      "type": "TextBlock",
-      "text": "Choose the colour of your cake?",
-      "size": "medium",
-      "wrap": true
     }
+    
+  ]
+},
+  {
+    "type": "TextBlock",
+    "text": "Choose the colour of your cake?",
+    "size": "medium",
+    "wrap": true
+  }
 
   ],
   "actions": [
