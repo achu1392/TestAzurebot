@@ -193,6 +193,12 @@ return this.greetUser(step);
         const card = CardFactory.adaptiveCard(ColourCard);
         await step.context.sendActivity({ attachments: [card] });
         }
+        else if (count === 1) {
+            await step.context.sendActivity(`Here is your cake`);
+        const yelcard = CardFactory.adaptiveCard(YellowCard);
+        await step.context.sendActivity({ attachments: [yelcard] });
+        }
+        count = count +1;
       //  await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
         return await step.endDialog();
     }
