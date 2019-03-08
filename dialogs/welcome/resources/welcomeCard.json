@@ -13,11 +13,11 @@
       "text": "Choose the shape of your cake?",
       "size": "medium",
       "wrap": true
-    },
-   
+    } 
+
+  ],
+  "actions": [
     {
-      "actions":[
-        {
       "type": "Action.Submit",
       "title": "Triangle",
       "data": "Triangle"
@@ -31,33 +31,12 @@
       "type": "Action.Submit",
       "title": "Round",
       "data": "Round"
-    }
-    
-  ]
-},
-  {
-    "type": "TextBlock",
-    "text": "Choose the colour of your cake?",
-    "size": "medium",
-    "wrap": true
-  }
-
-  ],
-  "actions": [
-    {
-      "type": "Action.Submit",
-      "title": "Blue",
-      "data": "Blue"
     },
     {
-      "type": "Action.Submit",
-      "title": "Yellow",
-      "data": "Yellow"
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Red",
-      "data": "Red"
+      "type": "TextBlock",
+      "text": "Choose the colour of your cake?",
+      "size": "medium",
+      "wrap": true
     }
   ]
   

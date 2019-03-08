@@ -97,7 +97,7 @@ class Greeting extends ComponentDialog {
         }
         if (!userProfile.name) {
             // prompt for name, if missing
-             return await step.prompt(NAME_PROMPT, 'Hi . Choose the shape of your cake from the inventory section');
+             return await step.prompt(NAME_PROMPT, `Hi .  Choose the shape of your cake from the inventory section`);
             // const shape = CardFactory.adaptiveCard(ShapeCard);
             // return   await step.context.sendActivity({ attachments: [shape] });
            // return await step.context.prompt()
@@ -123,9 +123,9 @@ class Greeting extends ComponentDialog {
             await this.userProfileAccessor.set(step.context, userProfile);
         }
         if (!userProfile.city) {
-           return await step.prompt(CITY_PROMPT, `Choose the colour for your colour from the inventory section`);
-        //    const colour = CardFactory.adaptiveCard(ColourCard);
-        //    return  await step.context.sendActivity({ attachments: [colour] });
+            await step.prompt(CITY_PROMPT, `You have chosen ${ userProfile.name } Shape . Choose the colour for your colour from the inventory section`);
+           const colour = CardFactory.adaptiveCard(ColourCard);
+           return  await step.context.sendActivity({ attachments: [colour] });
         } else {
             return await step.next();
         }
