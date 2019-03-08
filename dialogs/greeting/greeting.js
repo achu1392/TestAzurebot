@@ -190,17 +190,18 @@ return this.greetUser(step);
         // Display to the user their profile information and end dialog
         if (count === 0){
         await step.context.sendActivity(`You have selected  ${ userProfile.name } shape . Choose a colour from the below list!!`);
+        count = count +1;
         const card = CardFactory.adaptiveCard(ColourCard);
-        await step.context.sendActivity({ attachments: [card] });
+       return await step.context.sendActivity({ attachments: [card] });
         }
         else if (count === 1) {
             await step.context.sendActivity(`Here is your cake`);
         const yelcard = CardFactory.adaptiveCard(YellowCard);
-        await step.context.sendActivity({ attachments: [yelcard] });
+      return  await step.context.sendActivity({ attachments: [yelcard] });
         }
-        count = count +1;
+     
       //  await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
-        return await step.endDialog();
+       // return await step.endDialog();
     }
 
     async displayGreetingStep2(step) {
