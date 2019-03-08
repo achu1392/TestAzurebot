@@ -50,7 +50,7 @@ class Greeting extends ComponentDialog {
             this.initializeStateStep.bind(this),
             this.promptForNameStep.bind(this),
             this.promptForCityStep.bind(this),
-            this.displayGreetingStep.bind(this),
+           // this.displayGreetingStep.bind(this),
             this.displayGreetingStep2.bind(this)
         ]));
 
