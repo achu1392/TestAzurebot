@@ -10,7 +10,7 @@
     },
     {
       "type": "TextBlock",
-      "text": "Choose the shape of your cake?",
+      "text": "Chose the shape of your cake?",
       "size": "medium",
       "wrap": true
     } 
