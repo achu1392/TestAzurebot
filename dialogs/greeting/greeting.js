@@ -122,8 +122,8 @@ class Greeting extends ComponentDialog {
             await step.context.sendActivity(`You have selected  ${ userProfile.name } shape . Choose a colour from the below list!!`);
             const ycard = CardFactory.adaptiveCard(YellowCard);
         await step.context.sendActivity({ attachments: [ycard] });
- //return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
-           return await step.endDialog();
+ return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
+        //   return await step.endDialog();
            // return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
           // return await step.endDialog();
         } else {
