@@ -12,6 +12,7 @@ const { ColourCardFactory, CardFactory } = require('botbuilder');
 const { UserProfile } = require('./userProfile');
 const {ShapeCard} = require('./../shapes');
 const {ColourCard} = require('./../colours');
+const {YellowCakeCard} = require('./../yellowCake');
 // Minimum length requirements for city and name
 const CITY_LENGTH_MIN = 5;
 const NAME_LENGTH_MIN = 3;
@@ -49,9 +50,9 @@ class Greeting extends ComponentDialog {
         // as a water fall dialog executes steps registered in order
         this.addDialog(new WaterfallDialog(PROFILE_DIALOG, [
             this.initializeStateStep.bind(this),
-            this.promptForNameStep.bind(this)
-            // this.promptForCityStep.bind(this),
-            // this.displayGreetingStep.bind(this)
+            this.promptForNameStep.bind(this),
+            this.promptForCityStep.bind(this),
+            this.displayGreetingStep.bind(this)
         ]));
 
         // Add text prompts for name and city
@@ -96,9 +97,9 @@ class Greeting extends ComponentDialog {
         }
         if (!userProfile.name) {
             // prompt for name, if missing
-            // return await step.prompt(NAME_PROMPT, 'What is your name?');
-            const shape = CardFactory.adaptiveCard(ShapeCard);
-            return   await step.context.sendActivity({ attachments: [shape] });
+             return await step.prompt(NAME_PROMPT, 'Hi . Choose the shape of your cake from the inventory section');
+            // const shape = CardFactory.adaptiveCard(ShapeCard);
+            // return   await step.context.sendActivity({ attachments: [shape] });
            // return await step.context.prompt()
         } else {
             return await step.next();
@@ -122,9 +123,9 @@ class Greeting extends ComponentDialog {
             await this.userProfileAccessor.set(step.context, userProfile);
         }
         if (!userProfile.city) {
-           // return await step.prompt(CITY_PROMPT, `Hello ${ userProfile.name }, what city do you live in?`);
-           const colour = CardFactory.adaptiveCard(ColourCard);
-           return  await step.context.sendActivity({ attachments: [colour] });
+           return await step.prompt(CITY_PROMPT, `Choose the colour for your colour from the inventory section`);
+        //    const colour = CardFactory.adaptiveCard(ColourCard);
+        //    return  await step.context.sendActivity({ attachments: [colour] });
         } else {
             return await step.next();
         }
@@ -185,8 +186,9 @@ class Greeting extends ComponentDialog {
     async greetUser(step) {
         const userProfile = await this.userProfileAccessor.get(step.context);
         // Display to the user their profile information and end dialog
-        await step.context.sendActivity(`Hi ${ userProfile.name }, from ${ userProfile.city }, nice to meet you!`);
-        await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
+        await step.context.sendActivity(`Hi You have selected ${ userProfile.name } Shape and  ${ userProfile.city } colour . Have a nice day!`);
+        const yellow = CardFactory.adaptiveCard(YellowCakeCard);
+          return  await step.context.sendActivity({ attachments: [yellow] });
         return await step.endDialog();
     }
 }

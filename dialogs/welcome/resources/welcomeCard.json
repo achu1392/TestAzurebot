@@ -7,6 +7,66 @@
       "type": "Image",
       "url" :"https://www.brandcrowd.com/gallery/brands/pictures/picture14323705647889.png",
       "size": "stretch"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Choose the shape of your cake?",
+      "size": "medium",
+      "wrap": true
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "id": "CakeShape",
+      "style": "expanded",
+      "choices": [
+        {
+          "title": "Triangle",
+          "value": "triangle"
+        },
+        {
+          "title": "Round",
+          "value": "round"
+        },
+        {
+          "title": "Square",
+          "value": "square"
+        }
+      ]
+    }
+
+  ],
+  "actions": [
+    {
+      "type": "Action.ShowCard",
+      "title": "Cake Colour",
+      "card": {
+        "type": "AdaptiveCard",
+        "body": [
+          {
+            "type": "TextBlock",
+            "text": "Choose the colour of your cake?",
+            "size": "medium",
+            "wrap": true
+          }
+        ],
+        "actions": [
+          {
+            "type": "Action.Submit",
+            "title": "Blue",
+            "data": "Blue"
+          },
+          {
+            "type": "Action.Submit",
+            "title": "Yellow",
+            "data": "Yellow"
+          },
+          {
+            "type": "Action.Submit",
+            "title": "Red",
+            "data": "Red"
+          }
+        ]
+      }
     }
   ]
   
