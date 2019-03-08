@@ -22,11 +22,11 @@ const env = require('dotenv').config({ path: ENV_FILE });
 
 // Get the .bot file path
 // See https://aka.ms/about-bot-file to learn more about .bot file its use and bot configuration.
-const BOT_FILE = path.join(__dirname, ('./Testm.bot' || ''));
+const BOT_FILE = path.join(__dirname, ('./TestmWebBot.bot' || ''));
 let botConfig;
 try {
     // Read bot configuration from .bot file.
-    botConfig = BotConfiguration.loadSync(BOT_FILE, 'uFgsG7EpzRkVD8uKn8d6ODrFTzoPmry7crnGU99c6eo=');
+    botConfig = BotConfiguration.loadSync(BOT_FILE, 'YuQq/liHQuT5v4auG9Ti2ybWUnNozEyjHYLVsI3zjsA=');
 } catch (err) {
     console.error(`\nError reading bot file. Please ensure you have valid botFilePath and botFileSecret set for your environment.`);
     console.error(`\n - You can find the botFilePath and botFileSecret in the Azure App Service application settings.`);
