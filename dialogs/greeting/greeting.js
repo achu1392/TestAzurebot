@@ -118,9 +118,11 @@ class Greeting extends ComponentDialog {
             await this.userProfileAccessor.set(step.context, userProfile);
         }
         if (!userProfile.city) {
+            await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
             const ycard = CardFactory.adaptiveCard(YellowCard);
         await step.context.sendActivity({ attachments: [ycard] });
-            return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
+           // return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
+           return await step.endDialog();
         } else {
             return await step.next();
         }
