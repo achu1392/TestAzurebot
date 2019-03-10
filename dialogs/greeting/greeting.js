@@ -195,7 +195,8 @@ return this.greetUser(step);
        
        // count = count +1;
       //  await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
-        return await step.endDialog();
+       // return await step.endDialog();
+       return await step.next();
     }
 
     async displayGreetingStep2(step) {
