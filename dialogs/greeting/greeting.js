@@ -188,17 +188,12 @@ return this.greetUser(step);
     async greetUser(step) {
         const userProfile = await this.userProfileAccessor.get(step.context);
         // Display to the user their profile information and end dialog
-        if (count === 0){
+        
         await step.context.sendActivity(`You have selected  ${ userProfile.name } shape . Choose a colour from the below list!!`);
         const card = CardFactory.adaptiveCard(ColourCard);
         await step.context.sendActivity({ attachments: [card] });
-        }
-        else if (count === 1) {
-            await step.context.sendActivity(`Here is your cake`);
-        const yelcard = CardFactory.adaptiveCard(YellowCard);
-        await step.context.sendActivity({ attachments: [yelcard] });
-        }
-        count = count +1;
+       
+       // count = count +1;
       //  await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
         return await step.endDialog();
     }

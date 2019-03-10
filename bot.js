@@ -140,7 +140,7 @@ class BasicBot {
                             "size": "stretch"
                           }
                         break;
-                            case NONE_INTENT:
+                            case "Yellow":
                             default:
                                 // None or no intent identified, either way, let's provide some help
                                 // to the user
