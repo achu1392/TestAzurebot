@@ -199,27 +199,7 @@ return this.greetUser(step);
       // return await step.next();
     }
 
-    async displayGreetingStep2(step) {
-        // Save city, if prompted for
-        const userProfile = await this.userProfileAccessor.get(step.context);
-        if (userProfile.city === undefined && step.result) {
-            let lowerCaseCity = step.result;
-            // capitalize and set city
-            userProfile.city = lowerCaseCity.charAt(0).toUpperCase() + lowerCaseCity.substr(1);
-            await this.userProfileAccessor.set(step.context, userProfile);
-        }
-        return await this.greetUser2(step);
-    }
-
-    async greetUser2(step) {
-        const userProfile = await this.userProfileAccessor.get(step.context);
-        // Display to the user their profile information and end dialog
-        await step.context.sendActivity(`You have selected  ${ userProfile.name } shape .Here is your cake!`);
-        const ycard = CardFactory.adaptiveCard(YellowCard);
-        await step.context.sendActivity({ attachments: [ycard] });
-      //  await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
-        return await step.endDialog();
-    }
+    
 }
 
 exports.GreetingDialog = Greeting;
