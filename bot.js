@@ -218,6 +218,12 @@ class BasicBot {
             await dc.context.sendActivity(`I understand greetings, being asked for help, or being asked to cancel what I am doing.`);
             return true; // this is an interruption
         }
+
+        if(topIntent === "Orange"){
+            await dc.context.sendActivity(`Orange colour.`);
+            await dc.context.sendActivity(`I got Orange cap.`);
+            return true; 
+        }
         return false; // this is not an interruption
     }
 
