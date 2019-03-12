@@ -115,7 +115,9 @@ class BasicBot {
             if (interrupted) {
                 if (dc.activeDialog !== undefined) {
                     // issue a re-prompt on the active dialog
-                  //  dialogResult = await dc.repromptDialog();
+
+                    dialogResult = await dc.beginDialog('help');
+                //    dialogResult = await dc.repromptDialog();
                 } // Else: We dont have an active dialog so nothing to continue here.
             } else {
                 // No interruption. Continue any active dialogs.
