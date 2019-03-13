@@ -115,8 +115,14 @@ class BasicBot {
             if (interrupted) {
                 if (dc.activeDialog !== undefined) {
                     // issue a re-prompt on the active dialog
-console.log(a);
-                    dialogResult = await dc.beginDialog('help');
+
+                   // dialogResult = await dc.beginDialog('help');
+                   const topIntent = LuisRecognizer.topIntent(results);
+                   if(topIntent === "Yellow"){
+                    await dc.context.sendActivity(`Orange colour.`);
+                    await dc.context.sendActivity(`I got Orange cap.`);
+                    return true; 
+                }
                 //    dialogResult = await dc.repromptDialog();
                 } // Else: We dont have an active dialog so nothing to continue here.
             } else {
