@@ -49,8 +49,8 @@ class Greeting extends ComponentDialog {
         // as a water fall dialog executes steps registered in order
         this.addDialog(new WaterfallDialog(PROFILE_DIALOG, [
           //  this.initializeStateStep.bind(this),
-            this.promptForNameStep.bind(this)
-           // this.promptForCityStep.bind(this),
+            this.promptForNameStep.bind(this),
+            this.promptForCityStep.bind(this),
           // this.displayGreetingStep.bind(this)
             //this.displayGreetingStep2.bind(this)
         ]));
@@ -90,17 +90,17 @@ class Greeting extends ComponentDialog {
      * @param {WaterfallStepContext} step contextual information for the current step being executed
      */
     async promptForNameStep(step) {
-        const userProfile = await this.userProfileAccessor.get(step.context);
+       // const userProfile = await this.userProfileAccessor.get(step.context);
         // if we have everything we need, greet user and return
-        if (userProfile !== undefined && userProfile.name !== undefined && userProfile.city !== undefined) {
-            return await this.greetUser(step);
-        }
-        if (!userProfile.name) {
+      //  if (userProfile !== undefined && userProfile.name !== undefined && userProfile.city !== undefined) {
+          //  return await this.greetUser(step);
+       // }
+       // if (!userProfile.name) {
             // prompt for name, if missing
             return await step.prompt(NAME_PROMPT, 'Hi. Choose the shape of your cake from Inventory');
-        } else {
-            return await step.next();
-        }
+        // } else {
+        //     return await step.next();
+        // }
     }
     /**
      * Waterfall Dialog step functions.
