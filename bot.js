@@ -112,6 +112,7 @@ class BasicBot {
             // Based on LUIS topIntent, evaluate if we have an interruption.
             // Interruption here refers to user looking for help/ cancel existing dialog
             const interrupted = await this.isTurnInterrupted(dc, results);
+            console.log(a);
             if (interrupted) {
                 if (dc.activeDialog !== undefined) {
                     // issue a re-prompt on the active dialog

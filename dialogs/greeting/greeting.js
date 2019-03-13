@@ -48,10 +48,10 @@ class Greeting extends ComponentDialog {
         // The order of step function registration is importent
         // as a water fall dialog executes steps registered in order
         this.addDialog(new WaterfallDialog(PROFILE_DIALOG, [
-            this.initializeStateStep.bind(this),
-            this.promptForNameStep.bind(this),
-            this.promptForCityStep.bind(this),
-           this.displayGreetingStep.bind(this)
+          //  this.initializeStateStep.bind(this),
+            this.promptForNameStep.bind(this)
+           // this.promptForCityStep.bind(this),
+          // this.displayGreetingStep.bind(this)
             //this.displayGreetingStep2.bind(this)
         ]));
 
@@ -186,10 +186,10 @@ return this.greetUser(step);
      * @param {WaterfallStepContext} step contextual information for the current step being executed
      */
     async greetUser(step) {
-        const userProfile = await this.userProfileAccessor.get(step.context);
+       // const userProfile = await this.userProfileAccessor.get(step.context);
         // Display to the user their profile information and end dialog
         
-        await step.context.sendActivity(`You have selected  ${ userProfile.name } shape . Choose a colour from the below list!!`);
+        await step.context.sendActivity(`You have selected   shape . Choose a colour from the below list!!`);
         const card = CardFactory.adaptiveCard(ColourCard);
         await step.context.sendActivity({ attachments: [card] });
        
