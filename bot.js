@@ -21,13 +21,14 @@ const USER_PROFILE_PROPERTY = 'userProfileProperty';
 
 // LUIS service type entry as defined in the .bot file.
 const LUIS_CONFIGURATION = 'BasicBotLuisApplication';
-
+const {YellowCard} = require('./dialogs/yellowCake')
 // Supported LUIS Intents.
 const GREETING_INTENT = 'Greeting';
 const CANCEL_INTENT = 'Cancel';
 const HELP_INTENT = 'Help';
 const NONE_INTENT = 'None';
-const FRUIT_INTENT = 'Orange';
+const FRUIT_INTENT = 'Yellow';
+
 
 // Supported LUIS Entities, defined in ./dialogs/greeting/resources/greeting.lu
 const USER_NAME_ENTITIES = ['userName', 'userName_patternAny'];
@@ -78,7 +79,7 @@ class BasicBot {
         this.dialogs = new DialogSet(this.dialogState);
         // Add the Greeting dialog to the set
         this.dialogs.add(new GreetingDialog(GREETING_DIALOG, this.userProfileAccessor));
-
+//this.dialogs.add(new TriangleGreetingDialog())
         this.conversationState = conversationState;
         this.userState = userState;
     }
@@ -232,8 +233,9 @@ class BasicBot {
         }
 
         if(topIntent === FRUIT_INTENT){
-            await dc.context.sendActivity(`Orange colour.`);
-            await dc.context.sendActivity(`I got Orange cap.`);
+            await step.context.sendActivity(`Here is your cake!!`);
+        const card = CardFactory.adaptiveCard(YellowCard);
+        await step.context.sendActivity({ attachments: [card] });
             return true; 
         }
         return false; // this is not an interruption
