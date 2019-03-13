@@ -122,11 +122,11 @@ class BasicBot {
                    // dialogResult = await dc.beginDialog('help');
                 //    const topIntent = LuisRecognizer.topIntent(results);
                 //    if(topIntent === "Yellow"){
-                    dialogResult=     await dc.context.sendActivity(`Orange colour.`);
+                  //  dialogResult=     await dc.context.sendActivity(`Orange colour.`);
                   //  await dc.context.sendActivity(`I got Orange cap.`);
                    // return true; 
                 //}
-                //    dialogResult = await dc.repromptDialog();
+                 dialogResult = await dc.repromptDialog();
                 } // Else: We dont have an active dialog so nothing to continue here.
             } else {
                 // No interruption. Continue any active dialogs.
@@ -153,8 +153,10 @@ class BasicBot {
                             "size": "stretch"
                           }
                         break;
-                            case "Yellow":
-                            await dc.context.sendActivity(`Yellow just said to me.`);
+                            case FRUIT_INTENT:
+                            const ycard = CardFactory.adaptiveCard(YellowCard);
+        // await step.context.sendActivity({ attachments: [card] });
+        await dc.context.sendActivity({ attachments: [ycard] });
                             break;
                             default:
                                 // None or no intent identified, either way, let's provide some help
@@ -236,9 +238,7 @@ class BasicBot {
 
         if(topIntent === FRUIT_INTENT){
             await dc.context.sendActivity(`Here is your cake!!`);
-        const card = CardFactory.adaptiveCard(YellowCard);
-        // await step.context.sendActivity({ attachments: [card] });
-        await dc.context.sendActivity({ attachments: [card] });
+       
             return true; 
         }
         return false; // this is not an interruption
