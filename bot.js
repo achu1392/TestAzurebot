@@ -235,9 +235,10 @@ class BasicBot {
         }
 
         if(topIntent === FRUIT_INTENT){
-            await step.context.sendActivity(`Here is your cake!!`);
-        // const card = CardFactory.adaptiveCard(YellowCard);
+            await dc.context.sendActivity(`Here is your cake!!`);
+        const card = CardFactory.adaptiveCard(YellowCard);
         // await step.context.sendActivity({ attachments: [card] });
+        await dc.context.sendActivity({ attachments: [card] });
             return true; 
         }
         return false; // this is not an interruption
