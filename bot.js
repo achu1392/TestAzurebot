@@ -129,7 +129,7 @@ class BasicBot {
             } else {
                 // No interruption. Continue any active dialogs.
                // dialogResult = await dc.continueDialog();
-               dialogResult=     await dc.context.sendActivity(`Orange Red colour.`);
+              // dialogResult=     await dc.context.sendActivity(`Orange Red colour.`);
                dialogResult = await dc.continueDialog();
             }
 
