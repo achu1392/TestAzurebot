@@ -27,7 +27,7 @@ const GREETING_INTENT = 'Greeting';
 const CANCEL_INTENT = 'Cancel';
 const HELP_INTENT = 'Help';
 const NONE_INTENT = 'None';
-const FRUIT_INTENT = 'Orange';
+const FRUIT_INTENT = 'Yellow';
 
 
 // Supported LUIS Entities, defined in ./dialogs/greeting/resources/greeting.lu
@@ -234,8 +234,8 @@ class BasicBot {
 
         if(topIntent === FRUIT_INTENT){
             await step.context.sendActivity(`Here is your cake!!`);
-        const card = CardFactory.adaptiveCard(YellowCard);
-        await step.context.sendActivity({ attachments: [card] });
+        // const card = CardFactory.adaptiveCard(YellowCard);
+        // await step.context.sendActivity({ attachments: [card] });
             return true; 
         }
         return false; // this is not an interruption
