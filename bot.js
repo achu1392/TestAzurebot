@@ -25,7 +25,7 @@ const LUIS_CONFIGURATION = 'BasicBotLuisApplication';
 // Supported LUIS Intents.
 const GREETING_INTENT = 'Greeting';
 const CANCEL_INTENT = 'Cancel';
-const HELP_INTENT = 'Help';
+const HELP_INTENT = 'Yellow';
 const NONE_INTENT = 'None';
 
 // Supported LUIS Entities, defined in ./dialogs/greeting/resources/greeting.lu
