@@ -25,7 +25,7 @@ const LUIS_CONFIGURATION = 'BasicBotLuisApplication';
 // Supported LUIS Intents.
 const GREETING_INTENT = 'Greeting';
 const CANCEL_INTENT = 'Cancel';
-const HELP_INTENT = 'Yellow';
+const HELP_INTENT = 'Help';
 const NONE_INTENT = 'None';
 
 // Supported LUIS Entities, defined in ./dialogs/greeting/resources/greeting.lu
@@ -120,15 +120,16 @@ class BasicBot {
                    // dialogResult = await dc.beginDialog('help');
                 //    const topIntent = LuisRecognizer.topIntent(results);
                 //    if(topIntent === "Yellow"){
-                    await dc.context.sendActivity(`Orange colour.`);
-                    await dc.context.sendActivity(`I got Orange cap.`);
-                    return true; 
+                    dialogResult=     await dc.context.sendActivity(`Orange colour.`);
+                  //  await dc.context.sendActivity(`I got Orange cap.`);
+                   // return true; 
                 //}
                 //    dialogResult = await dc.repromptDialog();
                 } // Else: We dont have an active dialog so nothing to continue here.
             } else {
                 // No interruption. Continue any active dialogs.
-                dialogResult = await dc.continueDialog();
+               // dialogResult = await dc.continueDialog();
+               dialogResult=     await dc.context.sendActivity(`Orange Red colour.`);
             }
 
             // If no active dialog or no active dialog has responded,
