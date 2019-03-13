@@ -112,14 +112,14 @@ class Greeting extends ComponentDialog {
      */
     async promptForCityStep(step) {
         // save name, if prompted for
-        const userProfile = await this.userProfileAccessor.get(step.context);
-        if (userProfile.name === undefined && step.result) {
-            let lowerCaseName = step.result;
-            // capitalize and set name
-            userProfile.name = lowerCaseName.charAt(0).toUpperCase() + lowerCaseName.substr(1);
-            await this.userProfileAccessor.set(step.context, userProfile);
-        }
-        if (!userProfile.city) {
+        // const userProfile = await this.userProfileAccessor.get(step.context);
+        // if (userProfile.name === undefined && step.result) {
+        //     let lowerCaseName = step.result;
+        //     // capitalize and set name
+        //     userProfile.name = lowerCaseName.charAt(0).toUpperCase() + lowerCaseName.substr(1);
+        //     await this.userProfileAccessor.set(step.context, userProfile);
+        // }
+        // if (!userProfile.city) {
 //             await step.context.sendActivity(`You have selected  ${ userProfile.name } shape . Choose a colour from the below list!!`);
 //             const ycard = CardFactory.adaptiveCard(YellowCard);
 //         await step.context.sendActivity({ attachments: [ycard] });
@@ -128,9 +128,9 @@ return this.greetUser(step);
         //   return await step.endDialog();
            // return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
           // return await step.endDialog();
-        } else {
-            return await step.next();
-        }
+        // } else {
+        //     return await step.next();
+        // }
     }
     /**
      * Waterfall Dialog step functions.
