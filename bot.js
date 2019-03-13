@@ -27,6 +27,7 @@ const GREETING_INTENT = 'Greeting';
 const CANCEL_INTENT = 'Cancel';
 const HELP_INTENT = 'Help';
 const NONE_INTENT = 'None';
+const FRUIT_INTENT = "Orange"
 
 // Supported LUIS Entities, defined in ./dialogs/greeting/resources/greeting.lu
 const USER_NAME_ENTITIES = ['userName', 'userName_patternAny'];
@@ -230,7 +231,7 @@ class BasicBot {
             return true; // this is an interruption
         }
 
-        if(topIntent === "Orange"){
+        if(topIntent === FRUIT_INTENT){
             await dc.context.sendActivity(`Orange colour.`);
             await dc.context.sendActivity(`I got Orange cap.`);
             return true; 
