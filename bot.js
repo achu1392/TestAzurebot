@@ -154,6 +154,8 @@ class BasicBot {
                           }
                         break;
                             case "Yellow":
+                            await dc.context.sendActivity(`Yellow just said to me.`);
+                            break;
                             default:
                                 // None or no intent identified, either way, let's provide some help
                                 // to the user
