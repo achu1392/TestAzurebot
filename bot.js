@@ -27,7 +27,7 @@ const GREETING_INTENT = 'Greeting';
 const CANCEL_INTENT = 'Cancel';
 const HELP_INTENT = 'Help';
 const NONE_INTENT = 'None';
-const FRUIT_INTENT = 'Yellow';
+const FRUIT_INTENT = 'Orange';
 
 
 // Supported LUIS Entities, defined in ./dialogs/greeting/resources/greeting.lu
