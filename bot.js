@@ -146,13 +146,7 @@ class BasicBot {
                             case GREETING_INTENT:
                                 await dc.beginDialog(GREETING_DIALOG);
                                 break;
-                                case "Image":
-                        await {
-                            "type": "Image",
-                            "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtB3AwMUeNoq4gUBGe6Ocj8kyh3bXa9ZbV7u1fVKQoyKFHdkqU",
-                            "size": "stretch"
-                          }
-                        break;
+                               
                             case FRUIT_INTENT:
                             const ycard = CardFactory.adaptiveCard(YellowCard);
         // await step.context.sendActivity({ attachments: [card] });
