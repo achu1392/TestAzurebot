@@ -12,6 +12,7 @@ const { UserProfile } = require('./dialogs/greeting/userProfile');
 const { WelcomeCard } = require('./dialogs/welcome');
 const { GreetingDialog } = require('./dialogs/greeting');
 const {TriangleGreetingDialog} = require('./dialogs/trianglegreeting');
+const {ColourCard} = require('./dialogs/colours');
 // Greeting Dialog ID
 const GREETING_DIALOG = 'greetingDialog';
 
@@ -22,6 +23,7 @@ const USER_PROFILE_PROPERTY = 'userProfileProperty';
 // LUIS service type entry as defined in the .bot file.
 const LUIS_CONFIGURATION = 'BasicBotLuisApplication';
 const {YellowCard} = require('./dialogs/yellow');
+const {YellowSquareCard} = require('./dialogs/yellowSquare');
 const {BlueCard} = require('./dialogs/blue');
 const {RedCard} = require('./dialogs/red');
 // Supported LUIS Intents.
@@ -30,7 +32,7 @@ const CANCEL_INTENT = 'Cancel';
 const HELP_INTENT = 'Help';
 const NONE_INTENT = 'None';
 const FRUIT_INTENT = 'Yellow';
-
+var shape="";
 
 // Supported LUIS Entities, defined in ./dialogs/greeting/resources/greeting.lu
 const USER_NAME_ENTITIES = ['userName', 'userName_patternAny'];
@@ -133,17 +135,47 @@ class BasicBot {
            else{
                 console.log("Active Dialog Absent");
               if (topIntent === 'Yellow') {
+                  if (shape === "Round"){
            const welcomeCard = CardFactory.adaptiveCard(YellowCard);
                         await context.sendActivity({ attachments: [welcomeCard] });
+                  } 
+                  else if(shape === "Square" ){
+                    const shapeCard = CardFactory.adaptiveCard(YellowSquareCard);
+                    await context.sendActivity({ attachments: [shapeCard] });
+                  }
+                  else if(shape === "Triangle"){
+
+                  }
               }
               else if (topIntent === 'Blue'){
+                  if (shape === "Round") {
                 const blueCard = CardFactory.adaptiveCard(BlueCard);
                 await context.sendActivity({ attachments: [blueCard] });
+                  }
+                  else if(shape === "Square" ){
+
+                }
+                else if(shape === "Triangle"){
+
+                }
               }
               else if (topIntent === 'Red'){
+                  if (shape === "Round"){
                 const redCard = CardFactory.adaptiveCard(RedCard);
                 await context.sendActivity({ attachments: [redCard] });
-              }
+                  }
+                  else if(shape === "Square" ){
+
+                }
+                else if(shape === "Triangle"){
+
+                }
+              } 
+              if(topIntent === 'Round' || topIntent === 'Square' || topIntent === 'Triangle'){
+                  shape = topIntent;
+                const card = CardFactory.adaptiveCard(ColourCard);
+                  await step.context.sendActivity({ attachments: [card] });
+            }
            }
             } else {
                 // No interruption. Continue any active dialogs.
@@ -169,11 +201,7 @@ class BasicBot {
                                 await dc.beginDialog(GREETING_DIALOG);
                                 break;
                                
-                            case FRUIT_INTENT:
-                            const ycard = CardFactory.adaptiveCard(YellowCard);
-        // await step.context.sendActivity({ attachments: [card] });
-        await dc.context.sendActivity({ attachments: [ycard] });
-                            break;
+                            
                             default:
                                 // None or no intent identified, either way, let's provide some help
                                 // to the user
@@ -255,6 +283,12 @@ class BasicBot {
         if(topIntent === FRUIT_INTENT || topIntent === "Blue" || topIntent === "Red"){
             console.log("Yellowwww start");
             await dc.context.sendActivity(`Here is your cake!!`);
+       
+            return true; 
+        }
+
+        if(topIntent === "Round" || topIntent === "Square" || topIntent === "Triangle"){
+            await dc.context.sendActivity(`You have selected ${topIntent} shape . Please select the cake colour`);
        
             return true; 
         }
