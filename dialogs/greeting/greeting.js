@@ -192,11 +192,11 @@ return this.greetUser(step);
         
         await step.context.sendActivity(`You have selected   shape . Choose a colour from the below list!!`);
         const card = CardFactory.adaptiveCard(ColourCard);
-        await step.context.sendActivity({ attachments: [card] });
+     return   await step.context.sendActivity({ attachments: [card] });
        
        // count = count +1;
       //  await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
-      return await step.endDialog();
+      //return await step.endDialog();
       // return await step.next();
     }
 
