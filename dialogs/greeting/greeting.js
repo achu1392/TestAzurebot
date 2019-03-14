@@ -189,7 +189,7 @@ return this.greetUser(step);
        // const userProfile = await this.userProfileAccessor.get(step.context);
         // Display to the user their profile information and end dialog
         
-        await step.context.sendActivity(`You have selected   shape . Choose a colour from the below list!!`);
+        await step.context.sendActivity(`You have selected Round  shape . Choose a colour from the below list!!`);
         const card = CardFactory.adaptiveCard(ColourCard);
       return  await step.context.sendActivity({ attachments: [card] });
        
