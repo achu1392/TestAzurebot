@@ -2,5 +2,4 @@
 // Licensed under the MIT License.
 
 const BlueTriangleCard = require('./resources/blueTriangleCard.json');
-
 exports.BlueTriangleCard = BlueTriangleCard;
