@@ -3,4 +3,4 @@
 
 const BlueTriangleCard = require('./resources/blueTriangleCard.json');
 
-exports.RedTriangleCard = BlueTriangleCard;
+exports.BlueTriangleCard = BlueTriangleCard;
