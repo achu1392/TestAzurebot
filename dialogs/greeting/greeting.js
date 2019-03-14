@@ -98,7 +98,7 @@ class Greeting extends ComponentDialog {
        // if (!userProfile.name) {
             // prompt for name, if missing
              await step.prompt(NAME_PROMPT, 'Hi. Choose the shape of your cake from Inventory');
-     return await step.endDialog();
+     //return await step.endDialog();
         // } else {
         //     return await step.next();
         // }
@@ -192,11 +192,11 @@ return this.greetUser(step);
         
         await step.context.sendActivity(`You have selected   shape . Choose a colour from the below list!!`);
         const card = CardFactory.adaptiveCard(ColourCard);
-     return   await step.context.sendActivity({ attachments: [card] });
+        await step.context.sendActivity({ attachments: [card] });
        
        // count = count +1;
       //  await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
-      // return await step.endDialog();
+      return await step.endDialog();
       // return await step.next();
     }
 
