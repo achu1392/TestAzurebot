@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-const RedCakeCard = require('./resources/RedCakeCard.json');
+const RedCard = require('./resources/redCard.json');
 
-exports.RedCakeCard = RedCakeCard;
+exports.RedCard = RedCard;

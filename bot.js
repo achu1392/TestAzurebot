@@ -122,13 +122,7 @@ class BasicBot {
                 if (dc.activeDialog !== undefined) {
                     // issue a re-prompt on the active dialog
 
-                   // dialogResult = await dc.beginDialog('help');
-                //    const topIntent = LuisRecognizer.topIntent(results);
-                //    if(topIntent === "Yellow"){
-                  //  dialogResult=     await dc.context.sendActivity(`Orange colour.`);
-                  //  await dc.context.sendActivity(`I got Orange cap.`);
-                   // return true; 
-                //}
+            
                   console.log("Active Dialog Present");
                  dialogResult = await dc.repromptDialog();
                
@@ -136,14 +130,16 @@ class BasicBot {
                 } // Else: We dont have an active dialog so nothing to continue here.
            else{
                 console.log("Active Dialog Absent");
-               //  dialogResult = await dc.continueDialog();
-            //   dc.context.responded = false;
-                // console.log(dialogResult);
-        //         const ycard = CardFactory.adaptiveCard(YellowCard);
-        // // await step.context.sendActivity({ attachments: [card] });
-        //  await context.sendActivity({ attachments: [ycard] });
+              if (topIntent === 'Yellow') {
            const welcomeCard = CardFactory.adaptiveCard(YellowCard);
                         await context.sendActivity({ attachments: [welcomeCard] });
+              }
+              else if (topIntent === 'Blue'){
+
+              }
+              else if (topIntent === 'Red'){
+                  
+              }
            }
             } else {
                 // No interruption. Continue any active dialogs.

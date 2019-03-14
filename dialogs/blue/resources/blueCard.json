@@ -1,0 +1,14 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+      {
+        "type": "Image",
+        "url" :"https://www.pngkey.com/png/full/6-62171_blue-birthday-cake-clip-art-clipart-blue-cake.png",
+        "size": "stretch"
+      }
+    ] 
+  }
+  
+  

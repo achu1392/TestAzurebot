@@ -9,7 +9,7 @@ const { ComponentDialog, WaterfallDialog, TextPrompt } = require('botbuilder-dia
 // User state for greeting dialog
 const { UserProfile } = require('./userProfile');
 const {ColourCard} = require('./../colours');
-// const {YellowCard} = require('./../yellowCake')
+//const {YellowCard} = require('./../yellowCake')
 const { ActivityTypes, CardFactory } = require('botbuilder');
 // Minimum length requirements for city and name
 const CITY_LENGTH_MIN = 5;
@@ -97,8 +97,7 @@ class Greeting extends ComponentDialog {
        // }
        // if (!userProfile.name) {
             // prompt for name, if missing
-             await step.prompt(NAME_PROMPT, 'Hi. Choose the shape of your cake from Inventory');
-     //return await step.endDialog();
+            return await step.prompt(NAME_PROMPT, 'Hi. Choose the shape of your cake from Inventory');
         // } else {
         //     return await step.next();
         // }
@@ -125,16 +124,13 @@ class Greeting extends ComponentDialog {
 //             const ycard = CardFactory.adaptiveCard(YellowCard);
 //         await step.context.sendActivity({ attachments: [ycard] });
 //  return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
-//return this.greetUser(step);
+return this.greetUser(step);
         //   return await step.endDialog();
            // return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
           // return await step.endDialog();
         // } else {
         //     return await step.next();
         // }
-        await step.context.sendActivity(`You have selected   shape . Choose a colour from the below list!!`);
-        const card = CardFactory.adaptiveCard(ColourCard);
-        await step.context.sendActivity({ attachments: [card] });
     }
     /**
      * Waterfall Dialog step functions.
@@ -195,11 +191,11 @@ class Greeting extends ComponentDialog {
         
         await step.context.sendActivity(`You have selected   shape . Choose a colour from the below list!!`);
         const card = CardFactory.adaptiveCard(ColourCard);
-     return   await step.context.sendActivity({ attachments: [card] });
+      return  await step.context.sendActivity({ attachments: [card] });
        
        // count = count +1;
       //  await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
-      //return await step.endDialog();
+       //return await step.endDialog();
       // return await step.next();
     }
 
