@@ -9,7 +9,7 @@ const { ComponentDialog, WaterfallDialog, TextPrompt } = require('botbuilder-dia
 // User state for greeting dialog
 const { UserProfile } = require('./userProfile');
 const {ColourCard} = require('./../colours');
-const {YellowCard} = require('./../yellowCake')
+// const {YellowCard} = require('./../yellowCake')
 const { ActivityTypes, CardFactory } = require('botbuilder');
 // Minimum length requirements for city and name
 const CITY_LENGTH_MIN = 5;
@@ -97,7 +97,8 @@ class Greeting extends ComponentDialog {
        // }
        // if (!userProfile.name) {
             // prompt for name, if missing
-            return await step.prompt(NAME_PROMPT, 'Hi. Choose the shape of your cake from Inventory');
+             await step.prompt(NAME_PROMPT, 'Hi. Choose the shape of your cake from Inventory');
+     return await step.endDialog();
         // } else {
         //     return await step.next();
         // }
@@ -191,11 +192,11 @@ return this.greetUser(step);
         
         await step.context.sendActivity(`You have selected   shape . Choose a colour from the below list!!`);
         const card = CardFactory.adaptiveCard(ColourCard);
-        await step.context.sendActivity({ attachments: [card] });
+     return   await step.context.sendActivity({ attachments: [card] });
        
        // count = count +1;
       //  await step.context.sendActivity(`You can always say 'My name is <your name> to reintroduce yourself to me.`);
-       return await step.endDialog();
+      // return await step.endDialog();
       // return await step.next();
     }
 

@@ -21,7 +21,7 @@ const USER_PROFILE_PROPERTY = 'userProfileProperty';
 
 // LUIS service type entry as defined in the .bot file.
 const LUIS_CONFIGURATION = 'BasicBotLuisApplication';
-const {YellowCard} = require('./dialogs/yellowCake')
+const {YellowCard} = require('./dialogs/yellow');
 // Supported LUIS Intents.
 const GREETING_INTENT = 'Greeting';
 const CANCEL_INTENT = 'Cancel';
@@ -97,7 +97,8 @@ class BasicBot {
         // Handle Message activity type, which is the main activity type for shown within a conversational interface
         // Message activities may contain text, speech, interactive cards, and binary or unknown attachments.
         // see https://aka.ms/about-bot-activity-message to learn more about the message and other activity types
-        if (context.activity.type === ActivityTypes.Message) {
+  console.log(ActivityTypes.Message);
+    if (context.activity.type === ActivityTypes.Message) {
             let dialogResult;
             // Create a dialog context
             const dc = await this.dialogs.createContext(context);
@@ -115,7 +116,9 @@ class BasicBot {
             // Interruption here refers to user looking for help/ cancel existing dialog
             const interrupted = await this.isTurnInterrupted(dc, results);
            // console.log(a);
+           console.log(interrupted);
             if (interrupted) {
+              //  console.log(JSON.stringify(dc));
                 if (dc.activeDialog !== undefined) {
                     // issue a re-prompt on the active dialog
 
@@ -126,18 +129,37 @@ class BasicBot {
                   //  await dc.context.sendActivity(`I got Orange cap.`);
                    // return true; 
                 //}
+                  console.log("Active Dialog Present");
                  dialogResult = await dc.repromptDialog();
+               
+                 console.log(dialogResult);
                 } // Else: We dont have an active dialog so nothing to continue here.
+           else{
+                console.log("Active Dialog Absent");
+               //  dialogResult = await dc.continueDialog();
+            //   dc.context.responded = false;
+                // console.log(dialogResult);
+        //         const ycard = CardFactory.adaptiveCard(YellowCard);
+        // // await step.context.sendActivity({ attachments: [card] });
+        //  await context.sendActivity({ attachments: [ycard] });
+           const welcomeCard = CardFactory.adaptiveCard(YellowCard);
+                        await context.sendActivity({ attachments: [welcomeCard] });
+           }
             } else {
                 // No interruption. Continue any active dialogs.
                // dialogResult = await dc.continueDialog();
               // dialogResult=     await dc.context.sendActivity(`Orange Red colour.`);
+           console.log("Interuption absent");
                dialogResult = await dc.continueDialog();
+               
+               console.log(dialogResult);
             }
 
             // If no active dialog or no active dialog has responded,
             if (!dc.context.responded) {
                 // Switch on return results from any active dialog.
+              console.log("Active Dialog Switch");
+                console.log(dialogResult);
                 switch (dialogResult.status) {
                     // dc.continueDialog() returns DialogTurnStatus.empty if there are no active dialogs
                     case DialogTurnStatus.empty:
@@ -231,6 +253,7 @@ class BasicBot {
         }
 
         if(topIntent === FRUIT_INTENT){
+            console.log("Yellowwww start");
             await dc.context.sendActivity(`Here is your cake!!`);
        
             return true; 
