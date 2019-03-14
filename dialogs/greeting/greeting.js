@@ -49,8 +49,8 @@ class Greeting extends ComponentDialog {
         // as a water fall dialog executes steps registered in order
         this.addDialog(new WaterfallDialog(PROFILE_DIALOG, [
           //  this.initializeStateStep.bind(this),
-            this.promptForNameStep.bind(this),
-            this.promptForCityStep.bind(this),
+          //  this.promptForNameStep.bind(this),
+           // this.promptForCityStep.bind(this),
           // this.displayGreetingStep.bind(this)
             //this.displayGreetingStep2.bind(this)
         ]));
