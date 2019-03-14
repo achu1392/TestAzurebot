@@ -24,6 +24,7 @@ const USER_PROFILE_PROPERTY = 'userProfileProperty';
 const LUIS_CONFIGURATION = 'BasicBotLuisApplication';
 const {YellowCard} = require('./dialogs/yellow');
 const {YellowSquareCard} = require('./dialogs/yellowSquare');
+const {BlueSquareCard} = require('./dialogs/blueSquare');
 const {BlueCard} = require('./dialogs/blue');
 const {RedCard} = require('./dialogs/red');
 // Supported LUIS Intents.
@@ -153,7 +154,8 @@ class BasicBot {
                 await context.sendActivity({ attachments: [blueCard] });
                   }
                   else if(shape === "Square" ){
-
+                    const bluesquareCard = CardFactory.adaptiveCard(BlueSquareCard);
+                    await context.sendActivity({ attachments: [bluesquareCard] });
                 }
                 else if(shape === "Triangle"){
 
