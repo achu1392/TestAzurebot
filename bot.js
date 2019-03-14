@@ -26,6 +26,9 @@ const {YellowCard} = require('./dialogs/yellow');
 const {YellowSquareCard} = require('./dialogs/yellowSquare');
 const {BlueSquareCard} = require('./dialogs/blueSquare');
 const {RedSquareCard}= require('./dialogs/redSquare');
+const {YellowTriangleCard} = require('./dialogs/yellowTriangle');
+const {BlueTriangleCard} = require('./dialogs/blueTriangle');
+const {RedTriangleCard} = require('./dialogs/redTriangle');
 const {BlueCard} = require('./dialogs/blue');
 const {RedCard} = require('./dialogs/red');
 // Supported LUIS Intents.
@@ -146,7 +149,8 @@ class BasicBot {
                     await context.sendActivity({ attachments: [shapeCard] });
                   }
                   else if(shape === "Triangle"){
-
+                    const triangleCard = CardFactory.adaptiveCard(YellowTriangleCard);
+                    await context.sendActivity({ attachments: [triangleCard] });
                   }
               }
               else if (topIntent === 'Blue'){
@@ -159,7 +163,8 @@ class BasicBot {
                     await context.sendActivity({ attachments: [bluesquareCard] });
                 }
                 else if(shape === "Triangle"){
-
+                    const blueTriangleCard = CardFactory.adaptiveCard(BlueTriangleCard);
+                    await context.sendActivity({ attachments: [blueTriangleCard] });
                 }
               }
               else if (topIntent === 'Red'){
@@ -172,7 +177,8 @@ class BasicBot {
                     await context.sendActivity({ attachments: [redsquareCard] });
                 }
                 else if(shape === "Triangle"){
-
+                    const redTriangleCard = CardFactory.adaptiveCard(RedTriangleCard);
+                    await context.sendActivity({ attachments: [redTriangleCard] });
                 }
               } 
               if(topIntent === 'Round' || topIntent === 'Square' || topIntent === 'Triangle'){
