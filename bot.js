@@ -258,6 +258,12 @@ class BasicBot {
        
             return true; 
         }
+        if (topIntent === "Blue"){
+            return true;
+        }
+        if (topIntent === "Red"){
+            return true;
+        }
         return false; // this is not an interruption
     }
 
