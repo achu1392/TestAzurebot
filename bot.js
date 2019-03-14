@@ -169,7 +169,7 @@ class BasicBot {
                   }
                   else if(shape === "Square" ){
                     const redsquareCard = CardFactory.adaptiveCard(RedSquareCard);
-                    await context.sendActivity({ attachments: [RedSquareCard] });
+                    await context.sendActivity({ attachments: [redsquareCard] });
                 }
                 else if(shape === "Triangle"){
 
