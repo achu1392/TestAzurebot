@@ -252,18 +252,20 @@ class BasicBot {
             return true; // this is an interruption
         }
 
-        if(topIntent === FRUIT_INTENT){
+        if(topIntent === FRUIT_INTENT || topIntent === "Blue" || topIntent === "Red"){
             console.log("Yellowwww start");
             await dc.context.sendActivity(`Here is your cake!!`);
        
             return true; 
         }
-        if (topIntent === "Blue"){
-            return true;
-        }
-        if (topIntent === "Red"){
-            return true;
-        }
+        // if (topIntent === "Blue"){
+        //     await dc.context.sendActivity(`Here is your cake!!`);
+        //     return true;
+        // }
+        // if (topIntent === "Red"){
+        //     await dc.context.sendActivity(`Here is your cake!!`);
+        //     return true;
+        // }
         return false; // this is not an interruption
     }
 
