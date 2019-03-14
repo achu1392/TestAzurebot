@@ -22,6 +22,8 @@ const USER_PROFILE_PROPERTY = 'userProfileProperty';
 // LUIS service type entry as defined in the .bot file.
 const LUIS_CONFIGURATION = 'BasicBotLuisApplication';
 const {YellowCard} = require('./dialogs/yellow');
+const {BlueCard} = require('./dialogs/blue');
+const {RedCard} = require('./dialogs/red');
 // Supported LUIS Intents.
 const GREETING_INTENT = 'Greeting';
 const CANCEL_INTENT = 'Cancel';
@@ -135,10 +137,12 @@ class BasicBot {
                         await context.sendActivity({ attachments: [welcomeCard] });
               }
               else if (topIntent === 'Blue'){
-
+                const blueCard = CardFactory.adaptiveCard(BlueCard);
+                await context.sendActivity({ attachments: [blueCard] });
               }
               else if (topIntent === 'Red'){
-                  
+                const redCard = CardFactory.adaptiveCard(RedCard);
+                await context.sendActivity({ attachments: [redCard] });
               }
            }
             } else {
