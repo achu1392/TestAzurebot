@@ -125,13 +125,16 @@ class Greeting extends ComponentDialog {
 //             const ycard = CardFactory.adaptiveCard(YellowCard);
 //         await step.context.sendActivity({ attachments: [ycard] });
 //  return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
-return this.greetUser(step);
+//return this.greetUser(step);
         //   return await step.endDialog();
            // return await step.prompt(CITY_PROMPT, `You have chosen  ${ userProfile.name } , Confirm your option by clicking on the button again `);
           // return await step.endDialog();
         // } else {
         //     return await step.next();
         // }
+        await step.context.sendActivity(`You have selected   shape . Choose a colour from the below list!!`);
+        const card = CardFactory.adaptiveCard(ColourCard);
+        await step.context.sendActivity({ attachments: [card] });
     }
     /**
      * Waterfall Dialog step functions.
