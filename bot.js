@@ -174,7 +174,7 @@ class BasicBot {
               if(topIntent === 'Round' || topIntent === 'Square' || topIntent === 'Triangle'){
                   shape = topIntent;
                 const card = CardFactory.adaptiveCard(ColourCard);
-                  await step.context.sendActivity({ attachments: [card] });
+                  await context.sendActivity({ attachments: [card] });
             }
            }
             } else {
