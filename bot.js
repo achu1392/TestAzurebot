@@ -29,6 +29,7 @@ const {RedSquareCard}= require('./dialogs/redSquare');
 const {YellowTriangleCard} = require('./dialogs/yellowTriangle');
 const {BlueTriangleCard} = require('./dialogs/blueTriangle');
 const {RedTriangleCard} = require('./dialogs/redTriangle');
+const {ToppingsCard} = require('./dialogs/toppings');
 const {BlueCard} = require('./dialogs/blue');
 const {RedCard} = require('./dialogs/red');
 // Supported LUIS Intents.
@@ -38,6 +39,7 @@ const HELP_INTENT = 'Help';
 const NONE_INTENT = 'None';
 const FRUIT_INTENT = 'Yellow';
 var shape="";
+var color ="";
 
 // Supported LUIS Entities, defined in ./dialogs/greeting/resources/greeting.lu
 const USER_NAME_ENTITIES = ['userName', 'userName_patternAny'];
@@ -139,52 +141,60 @@ class BasicBot {
                 } // Else: We dont have an active dialog so nothing to continue here.
            else{
                 console.log("Active Dialog Absent");
-              if (topIntent === 'Yellow') {
-                  if (shape === "Round"){
-           const welcomeCard = CardFactory.adaptiveCard(YellowCard);
-                        await context.sendActivity({ attachments: [welcomeCard] });
-                  } 
-                  else if(shape === "Rectangle" ){
-                    const shapeCard = CardFactory.adaptiveCard(YellowSquareCard);
-                    await context.sendActivity({ attachments: [shapeCard] });
-                  }
-                  else if(shape === "Triangle"){
-                    const triangleCard = CardFactory.adaptiveCard(YellowTriangleCard);
-                    await context.sendActivity({ attachments: [triangleCard] });
-                  }
-              }
-              else if (topIntent === 'Blue'){
-                  if (shape === "Round") {
-                const blueCard = CardFactory.adaptiveCard(BlueCard);
-                await context.sendActivity({ attachments: [blueCard] });
-                  }
-                  else if(shape === "Rectangle" ){
-                    const bluesquareCard = CardFactory.adaptiveCard(BlueSquareCard);
-                    await context.sendActivity({ attachments: [bluesquareCard] });
-                }
-                else if(shape === "Triangle"){
-                    const blueTriangleCard = CardFactory.adaptiveCard(BlueTriangleCard);
-                    await context.sendActivity({ attachments: [blueTriangleCard] });
-                }
-              }
-              else if (topIntent === 'Red'){
-                  if (shape === "Round"){
-                const redCard = CardFactory.adaptiveCard(RedCard);
-                await context.sendActivity({ attachments: [redCard] });
-                  }
-                  else if(shape === "Rectangle" ){
-                    const redsquareCard = CardFactory.adaptiveCard(RedSquareCard);
-                    await context.sendActivity({ attachments: [redsquareCard] });
-                }
-                else if(shape === "Triangle"){
-                    const redTriangleCard = CardFactory.adaptiveCard(RedTriangleCard);
-                    await context.sendActivity({ attachments: [redTriangleCard] });
-                }
-              } 
+        //       if (topIntent === 'Yellow') {
+        //           if (shape === "Round"){
+        //    const welcomeCard = CardFactory.adaptiveCard(YellowCard);
+        //                 await context.sendActivity({ attachments: [welcomeCard] });
+        //           } 
+        //           else if(shape === "Rectangle" ){
+        //             const shapeCard = CardFactory.adaptiveCard(YellowSquareCard);
+        //             await context.sendActivity({ attachments: [shapeCard] });
+        //           }
+        //           else if(shape === "Triangle"){
+        //             const triangleCard = CardFactory.adaptiveCard(YellowTriangleCard);
+        //             await context.sendActivity({ attachments: [triangleCard] });
+        //           }
+        //       }
+        //       else if (topIntent === 'Blue'){
+        //           if (shape === "Round") {
+        //         const blueCard = CardFactory.adaptiveCard(BlueCard);
+        //         await context.sendActivity({ attachments: [blueCard] });
+        //           }
+        //           else if(shape === "Rectangle" ){
+        //             const bluesquareCard = CardFactory.adaptiveCard(BlueSquareCard);
+        //             await context.sendActivity({ attachments: [bluesquareCard] });
+        //         }
+        //         else if(shape === "Triangle"){
+        //             const blueTriangleCard = CardFactory.adaptiveCard(BlueTriangleCard);
+        //             await context.sendActivity({ attachments: [blueTriangleCard] });
+        //         }
+        //       }
+        //       else if (topIntent === 'Red'){
+        //           if (shape === "Round"){
+        //         const redCard = CardFactory.adaptiveCard(RedCard);
+        //         await context.sendActivity({ attachments: [redCard] });
+        //           }
+        //           else if(shape === "Rectangle" ){
+        //             const redsquareCard = CardFactory.adaptiveCard(RedSquareCard);
+        //             await context.sendActivity({ attachments: [redsquareCard] });
+        //         }
+        //         else if(shape === "Triangle"){
+        //             const redTriangleCard = CardFactory.adaptiveCard(RedTriangleCard);
+        //             await context.sendActivity({ attachments: [redTriangleCard] });
+        //         }
+
+           //   } 
+           //** Shape Top Intent//
               if(topIntent === 'Round' || topIntent === 'Rectangle' || topIntent === 'Triangle'){
                   shape = topIntent;
                 const card = CardFactory.adaptiveCard(ColourCard);
                   await context.sendActivity({ attachments: [card] });
+            }
+             //** Colour Top Intent//
+            if(topIntent === 'Yellow' || topIntent ==='Blue' || topIntent === 'Red' || topIntent === 'White'){
+                color = topIntent;
+                const topCard = CardFactory.adaptiveCard(ToppingsCard);
+                  await context.sendActivity({ attachments: [topCard] });
             }
            }
             } else {
