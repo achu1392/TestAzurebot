@@ -18,119 +18,29 @@
           "type": "Container",
           "items": [
             {
-              "type": "ColumnSet",
-              "columns": [
-                {
-                  "type": "Column",
-                  "width": "auto",
-                  "items": [
-                    {
-                      "type": "Image",
-                      "title" : "Yellow",
-                      "url": "http://www.sclance.com/pngs/yellow-circle-png/yellow_circle_png_1548458.png",
-                      "size": "medium",
-                      "color": "#000000",
-                      "selectAction": {
-            "type": "Action.Submit",
-            "title": "Yellow",
-            "data": "Yellow"
-          }
-      
-     
-        }
-                  ]
-                },
-                {
-                  "type": "Column",
-                  "width": "stretch",
-                  "separator": true,
-                  "spacing": "medium",
-                  "items": [
-                    {
-                      "type": "TextBlock",
-                      "text": "Yellow",
-                      "horizontalAlignment": "center"
+                "type": "ImageSet",
+                "imageSize": "auto",
+                "images": [
+                  {
+                    "type": "Image",
+                    "url": "https://partycity6.scene7.com/is/image/PartyCity/_pdp_sq_?$_1000x1000_$&$product=PartyCity/186131",
+                    "selectAction": {
+                      "type": "Action.Submit",
+                      "title": "Rectangle",
+                      "data": "Rectangle"
                     }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "ColumnSet",
-              "columns": [
-                {
-                  "type": "Column",
-                  "width": "auto",
-                  "items": [
-                    {
-                      "type": "Image",
-                      "title" : "White",
-                      "url": "https://dezov.s3.amazonaws.com/media/blue-circle-png504-452b-9c7e-5b104c5cb2e0.png",
-                      "size": "medium",
-                      "color": "#000000",
-                      "selectAction": {
-            "type": "Action.Submit",
-            "title": "Blue",
-            "data": "Blue"
-          }
-      
-     
-        }
-                  ]
-                },
-                {
-                  "type": "Column",
-                  "width": "stretch",
-                  "separator": true,
-                  "spacing": "medium",
-                  "items": [
-                    {
-                      "type": "TextBlock",
-                      "text": "Blue",
-                      "horizontalAlignment": "center"
+                  },
+                  {
+                    "type": "Image",
+                    "url": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSLJ5prvDyRu8xMEVHNWaB3-oXV8v74dK2rMDXvmoUyRaZZL4agzpn3QAZ5InwVpHWg7ZKGPl-YqTQ&usqp=CAc",
+                    "selectAction": {
+                      "type": "Action.Submit",
+                      "title": "Round",
+                      "data": "Round"
                     }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "ColumnSet",
-              "columns": [
-                {
-                  "type": "Column",
-                  "width": "auto",
-                  "items": [
-                    {
-                      "type": "Image",
-                      "title" : "White",
-                      "url": "data:image/png;base64,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",
-                      "size": "medium",
-                      "color": "#000000",
-                      "selectAction": {
-            "type": "Action.Submit",
-            "title": "Red",
-            "data": "Red"
-          }
-      
-     
-        }
-                  ]
-                },
-                {
-                  "type": "Column",
-                  "width": "stretch",
-                  "separator": true,
-                  "spacing": "medium",
-                  "items": [
-                    {
-                      "type": "TextBlock",
-                      "text": "Red",
-                      "horizontalAlignment": "center"
-                    }
-                  ]
-                }
-              ]
-            }
+                  }
+                ]
+            } 
           ]
         }
       ]

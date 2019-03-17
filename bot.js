@@ -144,7 +144,7 @@ class BasicBot {
            const welcomeCard = CardFactory.adaptiveCard(YellowCard);
                         await context.sendActivity({ attachments: [welcomeCard] });
                   } 
-                  else if(shape === "Square" ){
+                  else if(shape === "Rectangle" ){
                     const shapeCard = CardFactory.adaptiveCard(YellowSquareCard);
                     await context.sendActivity({ attachments: [shapeCard] });
                   }
@@ -158,7 +158,7 @@ class BasicBot {
                 const blueCard = CardFactory.adaptiveCard(BlueCard);
                 await context.sendActivity({ attachments: [blueCard] });
                   }
-                  else if(shape === "Square" ){
+                  else if(shape === "Rectangle" ){
                     const bluesquareCard = CardFactory.adaptiveCard(BlueSquareCard);
                     await context.sendActivity({ attachments: [bluesquareCard] });
                 }
@@ -172,7 +172,7 @@ class BasicBot {
                 const redCard = CardFactory.adaptiveCard(RedCard);
                 await context.sendActivity({ attachments: [redCard] });
                   }
-                  else if(shape === "Square" ){
+                  else if(shape === "Rectangle" ){
                     const redsquareCard = CardFactory.adaptiveCard(RedSquareCard);
                     await context.sendActivity({ attachments: [redsquareCard] });
                 }
@@ -181,7 +181,7 @@ class BasicBot {
                     await context.sendActivity({ attachments: [redTriangleCard] });
                 }
               } 
-              if(topIntent === 'Round' || topIntent === 'Square' || topIntent === 'Triangle'){
+              if(topIntent === 'Round' || topIntent === 'Rectangle' || topIntent === 'Triangle'){
                   shape = topIntent;
                 const card = CardFactory.adaptiveCard(ColourCard);
                   await context.sendActivity({ attachments: [card] });
