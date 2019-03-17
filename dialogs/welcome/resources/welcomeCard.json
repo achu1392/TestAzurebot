@@ -19,7 +19,9 @@
           "items": [
             {
                 "type": "ImageSet",
-                "imageSize": "auto",
+                "imageSize": "stretch",
+                "height":"stretch",
+                    "width":"stretch",
                 "images": [
                   {
                     "type": "Image",
