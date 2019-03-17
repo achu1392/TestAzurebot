@@ -32,7 +32,7 @@
               },
               {
                 "type": "Image",
-                "url": "https://dezov.s3.amazonaws.com/media/blue-circle-png504-452b-9c7e-5b104c5cb2e0.png",
+                "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp86TUrsGxmNq8MvqyBl6V8Lfw9uQiMR1Tsi3LmP5X92FwUgrj",
                 "selectAction": {
                   "type": "Action.Submit",
                   "title": "Blue",
