@@ -301,8 +301,8 @@ class BasicBot {
         }
 
         if(topIntent === FRUIT_INTENT || topIntent === "Blue" || topIntent === "Red"){
-            console.log("Yellowwww start");
-            await dc.context.sendActivity(`Here is your cake!!`);
+          //  console.log("Yellowwww start");
+            //await dc.context.sendActivity(`Here is your cake!!`);
        
             return true; 
         }
