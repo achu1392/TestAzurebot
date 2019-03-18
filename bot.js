@@ -316,7 +316,7 @@ class BasicBot {
         }
 
 
-        if(topIntent === "Round" || topIntent === "Square" || topIntent === "Triangle"){
+        if(topIntent === "Round" || topIntent === "Rectangle" || topIntent === "Triangle"){
             await dc.context.sendActivity(`You have selected ${topIntent} shape . Please select the cake colour`);
        
             return true; 
