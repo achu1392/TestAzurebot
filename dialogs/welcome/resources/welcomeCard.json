@@ -19,9 +19,9 @@
           "items": [
             {
                 "type": "ImageSet",
-                "imageSize": "stretch",
-                "height":"stretch",
-                    "width":"stretch",
+                "imageSize": "medium",
+                "height":"medium",
+                    "width":"medium",
                 "images": [
                   {
                     "type": "Image",
