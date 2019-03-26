@@ -25,7 +25,7 @@
                 "images": [
                   {
                     "type": "Image",
-                    "url": "https://partycity6.scene7.com/is/image/PartyCity/_pdp_sq_?$_1000x1000_$&$product=PartyCity/186131",
+                    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0SOIEP6Ln_I_wL34GYhVrwv1s2xFwVBEyyFaBD3fucbmMypZ",
                     "selectAction": {
                       "type": "Action.Submit",
                       "title": "Rectangle",
@@ -34,7 +34,7 @@
                   },
                   {
                     "type": "Image",
-                    "url": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSLJ5prvDyRu8xMEVHNWaB3-oXV8v74dK2rMDXvmoUyRaZZL4agzpn3QAZ5InwVpHWg7ZKGPl-YqTQ&usqp=CAc",
+                    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUXu4T6MRLhLH6W5NVCFmOdxUibdj3Up8s0Q2NZQP_xZGd8pMP",
                     "selectAction": {
                       "type": "Action.Submit",
                       "title": "Round",
