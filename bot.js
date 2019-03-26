@@ -347,7 +347,7 @@ candleCheck = topIntent;
             return true; // this is an interruption
         }
 
-        if(topIntent === FRUIT_INTENT || topIntent === "Blue" || topIntent === "Red" || topIntent === "Cream" || topIntent === "Shells" || topIntent === "Roses" || topIntent === "Cherries"){
+        if(topIntent === FRUIT_INTENT || topIntent === "Blue" || topIntent === "Red" || topIntent === "Cream" || topIntent === "Shells" || topIntent === "Roses" || topIntent === "Cherries" || topIntent==="Yes" || topIntent === "No"){
           //  console.log("Yellowwww start");
             //await dc.context.sendActivity(`Here is your cake!!`);
        
