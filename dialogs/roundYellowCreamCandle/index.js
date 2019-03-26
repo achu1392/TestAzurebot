@@ -3,4 +3,4 @@
 
 const RoundYellowCreamCandle = require('./resources/roundYellowCreamCandle.json');
 
-exports.WelcomeCard = RoundYellowCreamCandle;
+exports.RoundYellowCreamCandle = RoundYellowCreamCandle;
