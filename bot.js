@@ -225,7 +225,7 @@ candleCheck = topIntent;
                             if (candleCheck === "Yes"){
                                 const roundYellowCreamCandle = CardFactory.adaptiveCard(RoundYellowCreamCandle);
                                 await context.sendActivity({ attachments: [roundYellowCreamCandle] });
-                            } else{
+                            } else if (candleCheck === "No"){
                                 const roundYellowCreamNoCandle = CardFactory.adaptiveCard(YellowCard);
                                 await context.sendActivity({ attachments: [roundYellowCreamNoCandle] });
                             }
