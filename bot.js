@@ -46,6 +46,10 @@ const FRUIT_INTENT = 'Yellow';
 // Supported LUIS Entities, defined in ./dialogs/greeting/resources/greeting.lu
 const USER_NAME_ENTITIES = ['userName', 'userName_patternAny'];
 const USER_LOCATION_ENTITIES = ['userLocation', 'userLocation_patternAny'];
+var shape="";
+var color ="";
+var topping = "";
+var candleCheck="";
 
 /**
  * Demonstrates the following concepts:
@@ -213,7 +217,7 @@ class BasicBot {
             if(topIntent=== "Yes" || topIntent === "No"){
 candleCheck = topIntent;
 
-            }
+            
 
             switch (shape)
             {
@@ -255,7 +259,9 @@ candleCheck = topIntent;
                 }
                 break;
 
+            
             }
+        }
            }
             } else {
                 // No interruption. Continue any active dialogs.
