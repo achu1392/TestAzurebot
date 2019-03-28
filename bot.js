@@ -226,7 +226,9 @@ candleCheck = topIntent;
                         case "Cream" :
                             if (candleCheck === "Yes"){
                                 const roundYellowCreamCandle = CardFactory.adaptiveCard(RoundYellowCreamCandle);
+                                
                                 await context.sendActivity({ attachments: [roundYellowCreamCandle] });
+                               
                             } else if (candleCheck === "No"){
                                 const roundYellowCreamNoCandle = CardFactory.adaptiveCard(YellowCard);
                                 await context.sendActivity({ attachments: [roundYellowCreamNoCandle] });
@@ -245,9 +247,7 @@ candleCheck = topIntent;
                     }
                     break;
                 }
-                candleCheck ="";
-                shape="";
-                color="";
+                
                 break;
 
                 case "Rectangle" :
