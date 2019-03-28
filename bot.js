@@ -232,7 +232,7 @@ candleCheck = topIntent;
                                 await context.sendActivity({ attachments: [roundYellowCreamNoCandle] });
                             }
                             break;
-                            case "Rose" :
+                            case "Roses" :
                             if (candleCheck === "Yes"){
                                 const roundYellowRoseCandle = CardFactory.adaptiveCard(RoundYellowRoseCandle);
                                 await context.sendActivity({ attachments: [roundYellowRoseCandle] });
