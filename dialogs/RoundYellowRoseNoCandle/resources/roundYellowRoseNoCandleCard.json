@@ -1,0 +1,15 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+      {
+        "type": "Image",
+        "url" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrKoYgmqe3iUknfHHcis-MF-jFDo-Vb_Tfk4Hu2mZN3ArBndB6",
+        "size": "stretch"
+      }
+    ] 
+  }
+  
+  
+  

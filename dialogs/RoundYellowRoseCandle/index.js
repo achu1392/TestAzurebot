@@ -4,3 +4,4 @@
 const RoundYellowRoseCandle = require('./resources/roundYellowRoseCandleCard.json');
 
 exports.RoundYellowRoseCandle = RoundYellowRoseCandle;
+
