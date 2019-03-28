@@ -34,8 +34,8 @@ const {CandlesCard} = require('./dialogs/candles');
 const {RoundYellowCreamCandle} = require('./dialogs/roundYellowCreamCandle');
 const {RoundYellowRoseCandle} = require('./dialogs/RoundYellowRoseCandle');
 const {RoundYellowRoseNoCandle} = require('./dialogs/RoundYellowRoseNoCandle');
-const {RoundYellowShellsCandle} = require('./dialogs/roundYellowShellCandle');
-const {RoundYellowShellsNoCandle} = require('./dialogs/roundYellowShellNoCandle');
+const {RoundYellowShellCandle} = require('./dialogs/roundYellowShellCandle');
+const {RoundYellowShellNoCandle} = require('./dialogs/roundYellowShellNoCandle');
 const {BlueCard} = require('./dialogs/blue');
 const {RedCard} = require('./dialogs/red');
 // Supported LUIS Intents.
@@ -250,10 +250,10 @@ candleCheck = topIntent;
                             break;
                             case "Shells" :
                             if (candleCheck === "Yes"){
-                                const roundYellowShellCandle = CardFactory.adaptiveCard(RoundYellowShellsCandle);
+                                const roundYellowShellCandle = CardFactory.adaptiveCard(RoundYellowShellCandle);
                                 await context.sendActivity({ attachments: [roundYellowShellCandle] });
                             } else if (candleCheck === "No"){
-                                const roundYellowShellNoCandle = CardFactory.adaptiveCard(RoundYellowShellsNoCandle);
+                                const roundYellowShellNoCandle = CardFactory.adaptiveCard(RoundYellowShellNoCandle);
                                 await context.sendActivity({ attachments: [roundYellowShellNoCandle] });
                             }
                             break;
