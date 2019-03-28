@@ -42,10 +42,7 @@ const CANCEL_INTENT = 'Cancel';
 const HELP_INTENT = 'Help';
 const NONE_INTENT = 'None';
 const FRUIT_INTENT = 'Yellow';
-var shape="";
-var color ="";
-var topping = "";
-var candleCheck="";
+
 // Supported LUIS Entities, defined in ./dialogs/greeting/resources/greeting.lu
 const USER_NAME_ENTITIES = ['userName', 'userName_patternAny'];
 const USER_LOCATION_ENTITIES = ['userLocation', 'userLocation_patternAny'];
@@ -60,6 +57,7 @@ const USER_LOCATION_ENTITIES = ['userLocation', 'userLocation_patternAny'];
  *  Handle conversation interruptions
  */
 class BasicBot {
+    
     /**
      * Constructs the three pieces necessary for this bot to operate:
      * 1. StatePropertyAccessor for conversation state
@@ -75,6 +73,7 @@ class BasicBot {
         if (!conversationState) throw new Error('Missing parameter.  conversationState is required');
         if (!userState) throw new Error('Missing parameter.  userState is required');
         if (!botConfig) throw new Error('Missing parameter.  botConfig is required');
+        
 
         // Add the LUIS recognizer.
         const luisConfig = botConfig.findServiceByNameOrId(LUIS_CONFIGURATION);
