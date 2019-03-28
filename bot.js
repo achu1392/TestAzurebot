@@ -250,10 +250,10 @@ candleCheck = topIntent;
                             break;
                             case "Shells" :
                             if (candleCheck === "Yes"){
-                                const roundYellowRoseCandle = CardFactory.adaptiveCard(RoundYellowRoseCandle);
+                                const roundYellowRoseCandle = CardFactory.adaptiveCard(RoundYellowShellsCandle);
                                 await context.sendActivity({ attachments: [roundYellowRoseCandle] });
                             } else if (candleCheck === "No"){
-                                const roundYellowRoseNoCandle = CardFactory.adaptiveCard(RoundYellowRoseNoCandle);
+                                const roundYellowRoseNoCandle = CardFactory.adaptiveCard(RoundYellowShellsNoCandle);
                                 await context.sendActivity({ attachments: [roundYellowRoseNoCandle] });
                             }
                             break;
