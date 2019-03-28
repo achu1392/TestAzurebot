@@ -245,6 +245,9 @@ candleCheck = topIntent;
                     }
                     break;
                 }
+                candleCheck ="";
+                shape="";
+                color="";
                 break;
 
                 case "Rectangle" :
