@@ -203,17 +203,23 @@ class BasicBot {
              //** Colour Top Intent//
             if(topIntent === 'Yellow' || topIntent ==='Blue' || topIntent === 'Red' || topIntent === 'White'){
                 color = topIntent;
+                if (topIntent !== 'Yellow'){
                 const topCard = CardFactory.adaptiveCard(ToppingsCard);
                   await context.sendActivity({ attachments: [topCard] });
+                }
+                else if(topIntent === 'Yellow'){
+                    const topCard = CardFactory.adaptiveCard(ToppingsCard);
+                    await context.sendActivity({ attachments: [topCard] });
+                }
             }
 
             //**Toppings Top Intent */
             if (topIntent === "Cream" || topIntent === "Cherries" || topIntent === "Roses" || topIntent === "Shells"){
                 topping = topIntent;
-
+if ((color === 'Blue' && (topping !== 'Rose' || topping !== 'Cherry')) || (color === 'White' && (topping !=='Shell' || topping !== 'Cherry'))){
                 const candleCard = CardFactory.adaptiveCard(CandlesCard);
                 await context.sendActivity({ attachments: [candleCard] });
-
+}
             }
             //**Candle Check Top Intent */
             if(topIntent=== "Yes" || topIntent === "No"){

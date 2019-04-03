@@ -1,0 +1,88 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "TextBlock",
+            "spacing": "medium",
+            "size": "default",
+            "weight": "bolder",
+            "text": "Choose your Toppings!!",
+            "wrap": true,
+            "maxLines": 0
+          },
+          {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 60,
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Cake Cream"
+                                },
+                                {
+                                    "type": "Image",
+                                    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6CsRGozGX6YZv9AszRfbRZ7D5RBmYONFwCuLNlDFkvEnCZJ62kA",
+                                    "selectAction": {
+                                        "type": "Action.Submit",
+                                        "title": "Cream",
+                                        "data": "Cream"
+                                      }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": 60,
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Cake Shells"
+                                },
+                                {
+                                    "type": "Image",
+                                    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFSydNWEgin3AFca6J5YNzZryrUy71ldTFhZv1J_H0PGqYXNKr6w",
+                                    "selectAction": {
+                                        "type": "Action.Submit",
+                                        "title": "Shells",
+                                        "data": "Shells"
+                                      }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": 60,
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Roses"
+                                },
+                                {
+                                    "type": "Image",
+                                    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5hFyWOR9bouIZlQFCtGC8oYArnHwm2d05AYntcjCgTcaUFVHsoQ",
+                                    "selectAction": {
+                                        "type": "Action.Submit",
+                                        "title": "Roses",
+                                        "data": "Roses"
+                                      }
+                                }
+                            ]
+                        }
+                       
+                    ]
+                }
+                  
+              
+            ]
+        } 
+    ] 
+  }
+  
+  

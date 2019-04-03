@@ -1,0 +1,88 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "TextBlock",
+            "spacing": "medium",
+            "size": "default",
+            "weight": "bolder",
+            "text": "Choose your Toppings!!",
+            "wrap": true,
+            "maxLines": 0
+          },
+          {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 60,
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Cake Cream"
+                                },
+                                {
+                                    "type": "Image",
+                                    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6CsRGozGX6YZv9AszRfbRZ7D5RBmYONFwCuLNlDFkvEnCZJ62kA",
+                                    "selectAction": {
+                                        "type": "Action.Submit",
+                                        "title": "Cream",
+                                        "data": "Cream"
+                                      }
+                                }
+                            ]
+                        },
+                        
+                        {
+                            "type": "Column",
+                            "width": 60,
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Roses"
+                                },
+                                {
+                                    "type": "Image",
+                                    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5hFyWOR9bouIZlQFCtGC8oYArnHwm2d05AYntcjCgTcaUFVHsoQ",
+                                    "selectAction": {
+                                        "type": "Action.Submit",
+                                        "title": "Roses",
+                                        "data": "Roses"
+                                      }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": 60,
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Cherries"
+                                },
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/jpeg;base64,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",
+                                    "selectAction": {
+                                        "type": "Action.Submit",
+                                        "title": "Cherries",
+                                        "data": "Cherries"
+                                      }
+                                }
+                            ]
+                        }
+                    ]
+                }
+                  
+              
+            ]
+        } 
+    ] 
+  }
+  
+  
