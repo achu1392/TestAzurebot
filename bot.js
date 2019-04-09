@@ -339,7 +339,6 @@ candleCheck = topIntent;
                                 const roundBlueRoseCandle = CardFactory.adaptiveCard(RoundBlueRoseWithCandle);
                                 await context.sendActivity({ attachments: [roundBlueRoseCandle] });
                           
-                            
                             break;
                             case "Shells" :
                        
