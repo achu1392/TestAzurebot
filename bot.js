@@ -23,12 +23,6 @@ const USER_PROFILE_PROPERTY = 'userProfileProperty';
 // LUIS service type entry as defined in the .bot file.
 const LUIS_CONFIGURATION = 'BasicBotLuisApplication';
 const {YellowCard} = require('./dialogs/yellow');
-const {YellowSquareCard} = require('./dialogs/yellowSquare');
-const {BlueSquareCard} = require('./dialogs/blueSquare');
-const {RedSquareCard}= require('./dialogs/redSquare');
-const {YellowTriangleCard} = require('./dialogs/yellowTriangle');
-const {BlueTriangleCard} = require('./dialogs/blueTriangle');
-const {RedTriangleCard} = require('./dialogs/redTriangle');
 const {ToppingsCard} = require('./dialogs/toppings');
 const {CandlesCard} = require('./dialogs/candles');
 const {RoundYellowCreamCandle} = require('./dialogs/roundYellowCreamCandle');
@@ -36,8 +30,26 @@ const {RoundYellowRoseCandle} = require('./dialogs/RoundYellowRoseCandle');
 const {RoundYellowRoseNoCandle} = require('./dialogs/RoundYellowRoseNoCandle');
 const {RoundYellowShellCandle} = require('./dialogs/roundYellowShellCandle');
 const {RoundYellowShellNoCandle} = require('./dialogs/roundYellowShellNoCandle');
-const {BlueCard} = require('./dialogs/blue');
-const {RedCard} = require('./dialogs/red');
+const {RoundBrownCreamCandle} = require('./dialogs/roundBrownCreamWithCandle');
+const {RoundBrownCreamNoCandle} = require('./dialogs/roundBrownCreamWithNoCandle');
+const {RoundBrownShellCandle} = require('./dialogs/roundBrownShellsWithCandle');
+const {RoundBrownShellNoCandle} = require('./dialogs/roundBrownShellsWithNoCandle');
+const {RoundBrownCherryCandle} = require('./dialogs/roundBrownCherryWithCandle');
+const {RoundBrownCherryNoCandle} = require('./dialogs/roundBrownCherryWithNoCandle');
+const {RoundBrownRoseCandle} = require('./dialogs/roundBrownRoseWithCandle');
+const {RoundBrownRoseNoCandle} = require('./dialogs/roundBrownRoseWithNoCandle');
+const {RoundWhiteCreamCandle} = require('./dialogs/roundWhiteCreamWithCandle');
+const {RoundWhiteCreamNoCandle} = require('./dialogs/roundWhiteCreamWithNoCandle');
+const {RoundWhiteShellCandle} = require('./dialogs/roundWhiteShellsWithCandle');
+const {RoundWhiteRoseCandle} = require('./dialogs/roundWhiteRoseWithCandle');
+const {RoundWhiteRoseNoCandle} = require('./dialogs/roundWhiteRoseWithNoCandle');
+const {RoundWhiteCherryCandle} = require('./dialogs/roundWhiteCherryWithNoCandle');
+const {RoundBlueCreamWithCandle} = require('./dialogs/roundBlueCreamWithCandle');
+const {RoundBlueCreamWithNoCandle} = require('./dialogs/roundBlueCreamWithNoCandle');
+const {RoundBlueRoseWithCandle} = require('./dialogs/roundBlueRoseWithCandle');
+const {RoundBlueShellWithCandle} = require('./dialogs/roundBlueShellsWithCandle');
+const {RoundBlueCherryWithCandle} = require('./dialogs/roundBlueCherryWithCandle');
+
 // Supported LUIS Intents.
 const GREETING_INTENT = 'Greeting';
 const CANCEL_INTENT = 'Cancel';
@@ -151,48 +163,7 @@ class BasicBot {
                 } // Else: We dont have an active dialog so nothing to continue here.
            else{
                 console.log("Active Dialog Absent");
-        //       if (topIntent === 'Yellow') {
-        //           if (shape === "Round"){
-        //    const welcomeCard = CardFactory.adaptiveCard(YellowCard);
-        //                 await context.sendActivity({ attachments: [welcomeCard] });
-        //           } 
-        //           else if(shape === "Rectangle" ){
-        //             const shapeCard = CardFactory.adaptiveCard(YellowSquareCard);
-        //             await context.sendActivity({ attachments: [shapeCard] });
-        //           }
-        //           else if(shape === "Triangle"){
-        //             const triangleCard = CardFactory.adaptiveCard(YellowTriangleCard);
-        //             await context.sendActivity({ attachments: [triangleCard] });
-        //           }
-        //       }
-        //       else if (topIntent === 'Blue'){
-        //           if (shape === "Round") {
-        //         const blueCard = CardFactory.adaptiveCard(BlueCard);
-        //         await context.sendActivity({ attachments: [blueCard] });
-        //           }
-        //           else if(shape === "Rectangle" ){
-        //             const bluesquareCard = CardFactory.adaptiveCard(BlueSquareCard);
-        //             await context.sendActivity({ attachments: [bluesquareCard] });
-        //         }
-        //         else if(shape === "Triangle"){
-        //             const blueTriangleCard = CardFactory.adaptiveCard(BlueTriangleCard);
-        //             await context.sendActivity({ attachments: [blueTriangleCard] });
-        //         }
-        //       }
-        //       else if (topIntent === 'Red'){
-        //           if (shape === "Round"){
-        //         const redCard = CardFactory.adaptiveCard(RedCard);
-        //         await context.sendActivity({ attachments: [redCard] });
-        //           }
-        //           else if(shape === "Rectangle" ){
-        //             const redsquareCard = CardFactory.adaptiveCard(RedSquareCard);
-        //             await context.sendActivity({ attachments: [redsquareCard] });
-        //         }
-        //         else if(shape === "Triangle"){
-        //             const redTriangleCard = CardFactory.adaptiveCard(RedTriangleCard);
-        //             await context.sendActivity({ attachments: [redTriangleCard] });
-        //         }
-
+        
            //   } 
            //** Shape Top Intent//
               if(topIntent === 'Round' || topIntent === 'Rectangle' || topIntent === 'Triangle'){
@@ -263,13 +234,128 @@ candleCheck = topIntent;
                                 await context.sendActivity({ attachments: [roundYellowShellNoCandle] });
                             }
                             break;
+                            
 
                     }
                     break;
+                    case "Brown" :
+                    switch(topping){
+                        case "Cream" :
+                            if (candleCheck === "Yes"){
+                                const roundBrownCreamCandle = CardFactory.adaptiveCard(RoundBrownCreamCandle);
+                                
+                                await context.sendActivity({ attachments: [roundBrownCreamCandle] });
+                               
+                            } else if (candleCheck === "No"){
+                                const roundBrownCreamNoCandle = CardFactory.adaptiveCard(RoundBrownCreamNoCandle);
+                                await context.sendActivity({ attachments: [roundBrownCreamNoCandle] });
+                            }
+                            break;
+                            case "Roses" :
+                            if (candleCheck === "Yes"){
+                                const roundBrownRoseCandle = CardFactory.adaptiveCard(RoundBrownRoseCandle);
+                                await context.sendActivity({ attachments: [roundBrownRoseCandle] });
+                            } else if (candleCheck === "No"){
+                                const roundBrownRoseNoCandle = CardFactory.adaptiveCard(RoundBrownRoseNoCandle);
+                                await context.sendActivity({ attachments: [roundBrownRoseNoCandle] });
+                            }
+                            break;
+                            case "Shells" :
+                            if (candleCheck === "Yes"){
+                                const roundBrownShellCandle = CardFactory.adaptiveCard(RoundBrownShellCandle);
+                                await context.sendActivity({ attachments: [roundBrownShellCandle] });
+                            } else if (candleCheck === "No"){
+                                const roundBrownShellNoCandle = CardFactory.adaptiveCard(RoundBrownShellNoCandle);
+                                await context.sendActivity({ attachments: [roundBrownShellNoCandle] });
+                            }
+                            break;
+                            case "Cherry" :
+                            if (candleCheck === "Yes"){
+                                const roundBrownCherryCandle = CardFactory.adaptiveCard(RoundBrownCherryCandle);
+                                await context.sendActivity({ attachments: [roundBrownCherryCandle] });
+                            } else if (candleCheck === "No"){
+                                const roundBrownCherryNoCandle = CardFactory.adaptiveCard(RoundBrownCherryNoCandle);
+                                await context.sendActivity({ attachments: [roundBrownCherryNoCandle] });
+                            }
+                            break;
                 }
                 
                 break;
 
+                case "White":
+                
+                    switch(topping){
+                        case "Cream" :
+                            if (candleCheck === "Yes"){
+                                const roundWhiteCreamCandle = CardFactory.adaptiveCard(RoundWhiteCreamCandle);
+                                
+                                await context.sendActivity({ attachments: [roundWhiteCreamCandle] });
+                               
+                            } else if (candleCheck === "No"){
+                                const roundWhiteCreamNoCandle = CardFactory.adaptiveCard(RoundWhiteCreamNoCandle);
+                                await context.sendActivity({ attachments: [roundWhiteCreamNoCandle] });
+                            }
+                            break;
+                            case "Roses" :
+                            if (candleCheck === "Yes"){
+                                const roundWhiteRoseCandle = CardFactory.adaptiveCard(RoundWhiteRoseCandle);
+                                await context.sendActivity({ attachments: [roundWhiteRoseCandle] });
+                            } else if (candleCheck === "No"){
+                                const roundWhiteRoseNoCandle = CardFactory.adaptiveCard(RoundWhiteRoseNoCandle);
+                                await context.sendActivity({ attachments: [roundWhiteRoseNoCandle] });
+                            }
+                            break;
+                            case "Shells" :
+                       
+                                const roundWhiteShellCandle = CardFactory.adaptiveCard(RoundWhiteShellCandle);
+                                await context.sendActivity({ attachments: [roundWhiteShellCandle] });
+                           
+                            break;
+                            case "Cherry" :
+                          
+                                const roundWhiteCherryCandle = CardFactory.adaptiveCard(RoundWhiteCherryCandle);
+                                await context.sendActivity({ attachments: [roundWhiteCherryCandle] });
+                            
+                            break;
+                        }
+                break;
+
+                case "Blue":
+                
+                    switch(topping){
+                        case "Cream" :
+                            if (candleCheck === "Yes"){
+                                const roundBlueCreamCandle = CardFactory.adaptiveCard(RoundBlueCreamWithCandle);
+                                
+                                await context.sendActivity({ attachments: [roundBlueCreamCandle] });
+                               
+                            } else if (candleCheck === "No"){
+                                const roundBlueCreamNoCandle = CardFactory.adaptiveCard(RoundBlueCreamWithNoCandle);
+                                await context.sendActivity({ attachments: [roundBlueCreamNoCandle] });
+                            }
+                            break;
+                            case "Roses" :
+                            
+                                const roundBlueRoseCandle = CardFactory.adaptiveCard(RoundBlueRoseWithCandle);
+                                await context.sendActivity({ attachments: [roundBlueRoseCandle] });
+                          
+                            
+                            break;
+                            case "Shells" :
+                       
+                                const roundBlueShellCandle = CardFactory.adaptiveCard(RoundBlueShellWithCandle);
+                                await context.sendActivity({ attachments: [roundBlueShellCandle] });
+                           
+                            break;
+                            case "Cherry" :
+                          
+                                const roundBlueCherryCandle = CardFactory.adaptiveCard(RoundBlueCherryWithCandle);
+                                await context.sendActivity({ attachments: [roundBlueCherryCandle] });
+                            
+                            break;
+                        }
+                break;
+                    }
                 case "Rectangle" :
                 switch(color){
 

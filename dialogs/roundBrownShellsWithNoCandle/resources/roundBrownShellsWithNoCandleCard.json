@@ -1,0 +1,15 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+      {
+        "type": "Image",
+        "url" :"https://www.completelydelicious.com/wp-content/uploads/2016/11/7476604846_d92c9d19d3_z-1.jpg",
+        "size": "stretch"
+      }
+    ] 
+  }
+  
+  
+  
