@@ -25,6 +25,7 @@ const LUIS_CONFIGURATION = 'BasicBotLuisApplication';
 const {YellowCard} = require('./dialogs/yellow');
 const {ToppingsCard} = require('./dialogs/toppings');
 const {CandlesCard} = require('./dialogs/candles');
+const {ToppingsWithNoShell} = require('./dialogs/ToppingsWithNoShells');
 const {RoundYellowCreamCandle} = require('./dialogs/roundYellowCreamCandle');
 const {RoundYellowRoseCandle} = require('./dialogs/RoundYellowRoseCandle');
 const {RoundYellowRoseNoCandle} = require('./dialogs/RoundYellowRoseNoCandle');
@@ -178,18 +179,19 @@ class BasicBot {
                   await context.sendActivity({ attachments: [topCard] });
                 }
                 else if(topIntent === 'Yellow'){
-                    const topCard = CardFactory.adaptiveCard(ToppingsCard);
-                    await context.sendActivity({ attachments: [topCard] });
+                    const topWithNoShellCard = CardFactory.adaptiveCard(ToppingsWithNoShell);
+                    await context.sendActivity({ attachments: [topWithNoShellCard] });
                 }
             }
 
             //**Toppings Top Intent */
             if (topIntent === "Cream" || topIntent === "Cherries" || topIntent === "Roses" || topIntent === "Shells"){
                 topping = topIntent;
-if ((color === 'Blue' && (topping !== 'Rose' || topping !== 'Cherry')) || (color === 'White' && (topping !=='Shell' || topping !== 'Cherry'))){
+if ((color === 'Blue' && (topping !== 'Roses' || topping !== 'Cherries')) || (color === 'White' && (topping !=='Shell' || topping !== 'Cherry'))){
                 const candleCard = CardFactory.adaptiveCard(CandlesCard);
                 await context.sendActivity({ attachments: [candleCard] });
-}
+} else
+topIntent = "No";
             }
             //**Candle Check Top Intent */
             if(topIntent=== "Yes" || topIntent === "No"){
