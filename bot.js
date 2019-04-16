@@ -40,7 +40,6 @@ const {RoundBrownRoseCandle} = require('./dialogs/roundBrownRoseWithCandle');
 const {RoundBrownRoseNoCandle} = require('./dialogs/roundBrownRoseWithNoCandle');
 const {RoundWhiteCreamCandle} = require('./dialogs/roundWhiteCreamWithCandle');
 const {RoundWhiteCreamNoCandle} = require('./dialogs/roundWhiteCreamWithNoCandle');
-const {RoundWhiteShellCandle} = require('./dialogs/roundWhiteShellsWithCandle');
 const {RoundWhiteRoseCandle} = require('./dialogs/roundWhiteRoseWithCandle');
 const {RoundWhiteRoseNoCandle} = require('./dialogs/roundWhiteRoseWithNoCandle');
 const {RoundWhiteCherryCandle} = require('./dialogs/roundWhiteCherryWithNoCandle');
@@ -305,12 +304,7 @@ candleCheck = topIntent;
                                 await context.sendActivity({ attachments: [roundWhiteRoseNoCandle] });
                             }
                             break;
-                            case "Shells" :
-                       
-                                const roundWhiteShellCandle = CardFactory.adaptiveCard(RoundWhiteShellCandle);
-                                await context.sendActivity({ attachments: [roundWhiteShellCandle] });
                            
-                            break;
                             case "Cherry" :
                           
                                 const roundWhiteCherryCandle = CardFactory.adaptiveCard(RoundWhiteCherryCandle);
@@ -468,7 +462,7 @@ candleCheck = topIntent;
             return true; // this is an interruption
         }
 
-        if(topIntent === FRUIT_INTENT || topIntent === "Blue" || topIntent === "Red" || topIntent === "Cream" || topIntent === "Shells" || topIntent === "Roses" || topIntent === "Cherries" || topIntent==="Yes" || topIntent === "No"){
+        if(topIntent === FRUIT_INTENT || topIntent === "Blue" || topIntent === "Red" || topIntent === "White" || topIntent === "Brown" || topIntent === "Cream" || topIntent === "Shells" || topIntent === "Roses" || topIntent === "Cherries" || topIntent==="Yes" || topIntent === "No"){
           //  console.log("Yellowwww start");
             //await dc.context.sendActivity(`Here is your cake!!`);
        
