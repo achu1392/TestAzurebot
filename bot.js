@@ -190,8 +190,9 @@ class BasicBot {
 if ((color === 'Blue' && (topping !== 'Roses' || topping !== 'Cherries')) || (color === 'White' && (topping !=='Shells' || topping !== 'Cherries'))){
                 const candleCard = CardFactory.adaptiveCard(CandlesCard);
                 await context.sendActivity({ attachments: [candleCard] });
-} else
+} else{
 topIntent = "No";
+}
             }
             //**Candle Check Top Intent */
             if(topIntent=== "Yes" || topIntent === "No"){
