@@ -304,7 +304,7 @@ console.log(candleCheck)
                             }
                             break;
                            
-                            case "Cherry" :
+                            case "Cherries" :
                           
                                 const roundWhiteCherryCandle = CardFactory.adaptiveCard(RoundWhiteCherryCandle);
                                 await context.sendActivity({ attachments: [roundWhiteCherryCandle] });
@@ -339,7 +339,7 @@ console.log(candleCheck)
                                 await context.sendActivity({ attachments: [roundBlueShellCandle] });
                            
                             break;
-                            case "Cherry" :
+                            case "Cherries" :
                           
                                 const roundBlueCherryCandle = CardFactory.adaptiveCard(RoundBlueCherryWithCandle);
                                 await context.sendActivity({ attachments: [roundBlueCherryCandle] });
