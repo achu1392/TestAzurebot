@@ -33,9 +33,9 @@ const {RoundYellowShellCandle} = require('./dialogs/roundYellowShellCandle');
 const {RoundYellowShellNoCandle} = require('./dialogs/roundYellowShellNoCandle');
 const {RoundBrownCreamCandle} = require('./dialogs/roundBrownCreamWithCandle');
 const {RoundBrownCreamNoCandle} = require('./dialogs/roundBrownCreamWithNoCandle');
-const {RoundBrownShellCandle} = require('./dialogs/roundBrownShellsWithCandle');
-const {RoundBrownShellNoCandle} = require('./dialogs/roundBrownShellsWithNoCandle');
-const {RoundBrownCherryCandleCard} = require('./dialogs/roundBrownCherryWithCandle');
+const {RoundBrownShellsCandle} = require('./dialogs/roundBrownShellsWithCandle');
+const {RoundBrownShellsNoCandle} = require('./dialogs/roundBrownShellsWithNoCandle');
+const {RoundBrownCherryCandle} = require('./dialogs/roundBrownCherryWithCandle');
 const {RoundBrownCherryNoCandle} = require('./dialogs/roundBrownCherryWithNoCandle');
 const {RoundBrownRoseCandle} = require('./dialogs/roundBrownRoseWithCandle');
 const {RoundBrownRoseNoCandle} = require('./dialogs/roundBrownRoseWithNoCandle');
@@ -260,16 +260,16 @@ console.log(candleCheck)
                             break;
                             case "Shells" :
                             if (candleCheck === "Yes"){
-                                const roundBrownShellCandle = CardFactory.adaptiveCard(RoundBrownShellCandle);
+                                const roundBrownShellCandle = CardFactory.adaptiveCard(RoundBrownShellsCandle);
                                 await context.sendActivity({ attachments: [roundBrownShellCandle] });
                             } else if (candleCheck === "No"){
-                                const roundBrownShellNoCandle = CardFactory.adaptiveCard(RoundBrownShellNoCandle);
+                                const roundBrownShellNoCandle = CardFactory.adaptiveCard(RoundBrownShellsNoCandle);
                                 await context.sendActivity({ attachments: [roundBrownShellNoCandle] });
                             }
                             break;
                             case "Cherries" :
                             if (candleCheck === "Yes"){
-                                const roundBrownCherryCandle = CardFactory.adaptiveCard(RoundBrownCherryCandleCard);
+                                const roundBrownCherryCandle = CardFactory.adaptiveCard(RoundBrownCherryCandle);
                                 await context.sendActivity({ attachments: [roundBrownCherryCandle] });
                             } else if (candleCheck === "No"){
                                 const roundBrownCherryNoCandle = CardFactory.adaptiveCard(RoundBrownCherryNoCandle);
