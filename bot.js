@@ -187,7 +187,7 @@ class BasicBot {
             //**Toppings Top Intent */
             if (topIntent === "Cream" || topIntent === "Cherries" || topIntent === "Roses" || topIntent === "Shells"){
                 topping = topIntent;
-if ((color === 'Blue' && (topping !== 'Roses' || topping !== 'Cherries')) || (color === 'White' && (topping !=='Shell' || topping !== 'Cherry'))){
+if ((color === 'Blue' && (topping !== 'Roses' || topping !== 'Cherries')) || (color === 'White' && (topping !=='Shells' || topping !== 'Cherries'))){
                 const candleCard = CardFactory.adaptiveCard(CandlesCard);
                 await context.sendActivity({ attachments: [candleCard] });
 } else
