@@ -172,7 +172,7 @@ class BasicBot {
                   await context.sendActivity({ attachments: [card] });
             }
              //** Colour Top Intent//
-            if(topIntent === 'Yellow' || topIntent ==='Blue' || topIntent === 'Red' || topIntent === 'White'){
+            if(topIntent === 'Yellow' || topIntent ==='Blue' || topIntent === 'Red' || topIntent === 'White' || topIntent === 'Brown'){
                 color = topIntent;
                 if (topIntent !== 'Yellow'){
                 const topCard = CardFactory.adaptiveCard(ToppingsCard);
