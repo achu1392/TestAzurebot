@@ -35,7 +35,7 @@ const {RoundBrownCreamCandle} = require('./dialogs/roundBrownCreamWithCandle');
 const {RoundBrownCreamNoCandle} = require('./dialogs/roundBrownCreamWithNoCandle');
 const {RoundBrownShellCandle} = require('./dialogs/roundBrownShellsWithCandle');
 const {RoundBrownShellNoCandle} = require('./dialogs/roundBrownShellsWithNoCandle');
-const {RoundBrownCherryCandle} = require('./dialogs/roundBrownCherryWithCandle');
+const {RoundBrownCherryCandleCard} = require('./dialogs/roundBrownCherryWithCandle');
 const {RoundBrownCherryNoCandle} = require('./dialogs/roundBrownCherryWithNoCandle');
 const {RoundBrownRoseCandle} = require('./dialogs/roundBrownRoseWithCandle');
 const {RoundBrownRoseNoCandle} = require('./dialogs/roundBrownRoseWithNoCandle');
@@ -193,7 +193,7 @@ class BasicBot {
             //**Candle Check Top Intent */
             if(topIntent=== "Yes" || topIntent === "No"){
 candleCheck = topIntent;
-
+console.log(candleCheck)
             
 
             switch (shape)
@@ -267,9 +267,9 @@ candleCheck = topIntent;
                                 await context.sendActivity({ attachments: [roundBrownShellNoCandle] });
                             }
                             break;
-                            case "Cherry" :
+                            case "Cherries" :
                             if (candleCheck === "Yes"){
-                                const roundBrownCherryCandle = CardFactory.adaptiveCard(RoundBrownCherryCandle);
+                                const roundBrownCherryCandle = CardFactory.adaptiveCard(RoundBrownCherryCandleCard);
                                 await context.sendActivity({ attachments: [roundBrownCherryCandle] });
                             } else if (candleCheck === "No"){
                                 const roundBrownCherryNoCandle = CardFactory.adaptiveCard(RoundBrownCherryNoCandle);
