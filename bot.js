@@ -43,7 +43,7 @@ const {RoundWhiteCreamCandle} = require('./dialogs/roundWhiteCreamWithCandle');
 const {RoundWhiteCreamNoCandle} = require('./dialogs/roundWhiteCreamWithNoCandle');
 const {RoundWhiteRoseCandle} = require('./dialogs/roundWhiteRoseWithCandle');
 const {RoundWhiteRoseNoCandle} = require('./dialogs/roundWhiteRoseWithNoCandle');
-const {RoundWhiteCherryCandle} = require('./dialogs/roundWhiteCherryWithNoCandle');
+const {RoundWhiteCherryNoCandle} = require('./dialogs/roundWhiteCherryWithNoCandle');
 const {RoundBlueCreamWithCandle} = require('./dialogs/roundBlueCreamWithCandle');
 const {RoundBlueCreamWithNoCandle} = require('./dialogs/roundBlueCreamWithNoCandle');
 const {RoundBlueRoseWithCandle} = require('./dialogs/roundBlueRoseWithCandle');
@@ -306,7 +306,7 @@ console.log(candleCheck)
                            
                             case "Cherries" :
                           
-                                const roundWhiteCherryCandle = CardFactory.adaptiveCard(RoundWhiteCherryCandle);
+                                const roundWhiteCherryCandle = CardFactory.adaptiveCard(RoundWhiteCherryNoCandle);
                                 await context.sendActivity({ attachments: [roundWhiteCherryCandle] });
                             
                             break;
