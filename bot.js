@@ -216,6 +216,7 @@ console.log(candleCheck)
 
             switch (shape)
             {
+                
                 case "Round":
                 switch (color)
                 {
@@ -356,6 +357,8 @@ console.log(candleCheck)
                             
                             break;
                         }
+                        await dc.context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
+                        await dc.context.sendActivity('Have a great day !!!');
                 break;
                     }
                 case "Rectangle" :
@@ -431,6 +434,8 @@ console.log(candleCheck)
                         // When activity type is "conversationUpdate" and the member joining the conversation is the bot
                         // we will send our Welcome Adaptive Card.  This will only be sent once, when the Bot joins conversation
                         // To learn more about Adaptive Cards, see https://aka.ms/msbot-adaptivecards for more details.
+                        await dc.context.sendActivity('Hi. Welcome to the  Cake House !!');
+                        await dc.context.sendActivity('Lets Get Started.');
                         const welcomeCard = CardFactory.adaptiveCard(WelcomeCard);
                         await context.sendActivity({ attachments: [welcomeCard] });
                     }
