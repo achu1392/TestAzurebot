@@ -357,8 +357,7 @@ console.log(candleCheck)
                             
                             break;
                         }
-                        await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                        await context.sendActivity('Have a great day !!!');
+                        
                 break;
                     }
                 case "Rectangle" :
@@ -369,6 +368,8 @@ console.log(candleCheck)
 
             
             }
+            await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
+                        await context.sendActivity('Have a great day !!!');
         }
            }
             } else {
