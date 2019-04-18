@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-const RoundBlueShellsCandle = require('./resources/roundBlueShellsWithCandleCard.json');
+const RoundBlueShellWithCandle = require('./resources/roundBlueShellsWithCandleCard.json');
 
-exports.RoundBlueShellsCandle = RoundBlueShellsCandle;
+exports.RoundBlueShellWithCandle = RoundBlueShellWithCandle;
