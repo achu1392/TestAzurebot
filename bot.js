@@ -176,10 +176,14 @@ class BasicBot {
             if(topIntent === 'Yellow' || topIntent ==='Blue' || topIntent === 'Red' || topIntent === 'White' || topIntent === 'Brown'){
                 color = topIntent;
                 if (topIntent === 'White'){
+                    await dc.context.sendActivity('White Colour is for Peace and White Colour is for Shroud.');
+                    await dc.context.sendActivity('Please choose your favourite toppings .');
                 const topCardWithNoCherry = CardFactory.adaptiveCard(ToppingsWithNoCherry);
                   await context.sendActivity({ attachments: [topCardWithNoCherry] });
                 }
                 else if(topIntent === 'Yellow'){
+                    await dc.context.sendActivity('The colour of Yellow Makes You Glow .');
+                    await dc.context.sendActivity('Please choose your favourite toppings .');
                     const topWithNoShellCard = CardFactory.adaptiveCard(ToppingsWithNoShells);
                     await context.sendActivity({ attachments: [topWithNoShellCard] });
                 }
