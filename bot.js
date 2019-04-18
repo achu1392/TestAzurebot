@@ -65,7 +65,7 @@ var shape="";
 var color ="";
 var topping = "";
 var candleCheck="";
-
+var NoCandles ="No";
 /**
  * Demonstrates the following concepts:
  *  Displaying a Welcome Card, using Adaptive Card technology
@@ -192,17 +192,20 @@ class BasicBot {
             //**Toppings Top Intent */
             if (topIntent === "Cream" || topIntent === "Cherries" || topIntent === "Roses" || topIntent === "Shells"){
                 topping = topIntent;
-               if((color === 'White' && topping === 'Cherried') || (color === 'Blue' && topping === 'Roses' || topping === 'Shells' || topping === 'Cherries')){
-candleCheck === "No";
-topIntent === "No";
+               if((color === 'White' && topping === 'Cherries') || (color === 'Blue' && (topping === 'Roses' || topping === 'Shells' || topping === 'Cherries'))){
+console.log("No Candles");
+NoCandles ="Yes";
                } 
                else {
+                 NoCandles = "No";
                 const candleCard = CardFactory.adaptiveCard(CandlesCard);
                 await context.sendActivity({ attachments: [candleCard] });
+             
                }
             }
+            console.log("TopIntent" +topIntent);
             //**Candle Check Top Intent */
-            if(topIntent=== "Yes" || topIntent === "No"){
+            if(topIntent=== "Yes" || topIntent === "No" || NoCandles === "Yes" ){
 candleCheck = topIntent;
 console.log(candleCheck)
             
