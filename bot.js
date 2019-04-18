@@ -26,6 +26,7 @@ const {YellowCard} = require('./dialogs/yellow');
 const {ToppingsCard} = require('./dialogs/toppings');
 const {CandlesCard} = require('./dialogs/candles');
 const {ToppingsWithNoShells} = require('./dialogs/toppingsWithNoShells');
+const {ToppingsWithNoCherry} = require('./dialogs/toppingsWithNoCherry');
 const {RoundYellowCreamCandle} = require('./dialogs/roundYellowCreamCandle');
 const {RoundYellowRoseCandle} = require('./dialogs/RoundYellowRoseCandle');
 const {RoundYellowRoseNoCandle} = require('./dialogs/RoundYellowRoseNoCandle');
@@ -174,21 +175,31 @@ class BasicBot {
              //** Colour Top Intent//
             if(topIntent === 'Yellow' || topIntent ==='Blue' || topIntent === 'Red' || topIntent === 'White' || topIntent === 'Brown'){
                 color = topIntent;
-                if (topIntent !== 'Yellow'){
-                const topCard = CardFactory.adaptiveCard(ToppingsCard);
-                  await context.sendActivity({ attachments: [topCard] });
+                if (topIntent === 'White'){
+                const topCardWithNoCherry = CardFactory.adaptiveCard(ToppingsWithNoCherry);
+                  await context.sendActivity({ attachments: [topCardWithNoCherry] });
                 }
                 else if(topIntent === 'Yellow'){
                     const topWithNoShellCard = CardFactory.adaptiveCard(ToppingsWithNoShells);
                     await context.sendActivity({ attachments: [topWithNoShellCard] });
+                }
+                else{
+                    const topCard = CardFactory.adaptiveCard(ToppingsCard);
+                    await context.sendActivity({ attachments: [topCard] });
                 }
             }
 
             //**Toppings Top Intent */
             if (topIntent === "Cream" || topIntent === "Cherries" || topIntent === "Roses" || topIntent === "Shells"){
                 topping = topIntent;
+               if((color === 'White' && topping === 'Cherried') || (color === 'Blue' && topping === 'Roses' || topping === 'Shells' || topping === 'Cherries')){
+candleCheck === "No";
+topIntent === "No";
+               } 
+               else {
                 const candleCard = CardFactory.adaptiveCard(CandlesCard);
                 await context.sendActivity({ attachments: [candleCard] });
+               }
             }
             //**Candle Check Top Intent */
             if(topIntent=== "Yes" || topIntent === "No"){
@@ -223,15 +234,7 @@ console.log(candleCheck)
                                 await context.sendActivity({ attachments: [roundYellowRoseNoCandle] });
                             }
                             break;
-                            case "Shells" :
-                            if (candleCheck === "Yes"){
-                                const roundYellowShellCandle = CardFactory.adaptiveCard(RoundYellowShellCandle);
-                                await context.sendActivity({ attachments: [roundYellowShellCandle] });
-                            } else if (candleCheck === "No"){
-                                const roundYellowShellNoCandle = CardFactory.adaptiveCard(RoundYellowShellNoCandle);
-                                await context.sendActivity({ attachments: [roundYellowShellNoCandle] });
-                            }
-                            break;
+                           
                             
 
                     }
