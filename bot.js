@@ -232,8 +232,6 @@ console.log(candleCheck)
                                 const roundYellowCreamNoCandle = CardFactory.adaptiveCard(YellowCard);
                                 await context.sendActivity({ attachments: [roundYellowCreamNoCandle] });
                             }
-                            await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                        await context.sendActivity('Have a great day !!!');
                             break;
                             case "Roses" :
                             if (candleCheck === "Yes"){
@@ -243,8 +241,6 @@ console.log(candleCheck)
                                 const roundYellowRoseNoCandle = CardFactory.adaptiveCard(RoundYellowRoseNoCandle);
                                 await context.sendActivity({ attachments: [roundYellowRoseNoCandle] });
                             }
-                            await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                        await context.sendActivity('Have a great day !!!');
                             break;
                            
                             
@@ -263,8 +259,6 @@ console.log(candleCheck)
                                 const roundBrownCreamNoCandle = CardFactory.adaptiveCard(RoundBrownCreamNoCandle);
                                 await context.sendActivity({ attachments: [roundBrownCreamNoCandle] });
                             }
-                            await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                        await context.sendActivity('Have a great day !!!');
                             break;
                             case "Roses" :
                             if (candleCheck === "Yes"){
@@ -274,8 +268,6 @@ console.log(candleCheck)
                                 const roundBrownRoseNoCandle = CardFactory.adaptiveCard(RoundBrownRoseNoCandle);
                                 await context.sendActivity({ attachments: [roundBrownRoseNoCandle] });
                             }
-                            await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                        await context.sendActivity('Have a great day !!!');
                             break;
                             case "Shells" :
                             if (candleCheck === "Yes"){
@@ -285,8 +277,6 @@ console.log(candleCheck)
                                 const roundBrownShellNoCandle = CardFactory.adaptiveCard(RoundBrownShellsNoCandle);
                                 await context.sendActivity({ attachments: [roundBrownShellNoCandle] });
                             }
-                            await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                        await context.sendActivity('Have a great day !!!');
                             break;
                             case "Cherries" :
                             if (candleCheck === "Yes"){
@@ -296,8 +286,6 @@ console.log(candleCheck)
                                 const roundBrownCherryNoCandle = CardFactory.adaptiveCard(RoundBrownCherryNoCandle);
                                 await context.sendActivity({ attachments: [roundBrownCherryNoCandle] });
                             }
-                            await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                        await context.sendActivity('Have a great day !!!');
                             break;
                 }
                 
@@ -316,8 +304,6 @@ console.log(candleCheck)
                                 const roundWhiteCreamNoCandle = CardFactory.adaptiveCard(RoundWhiteCreamNoCandle);
                                 await context.sendActivity({ attachments: [roundWhiteCreamNoCandle] });
                             }
-                            await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                        await context.sendActivity('Have a great day !!!');
                             break;
                             case "Roses" :
                             if (candleCheck === "Yes"){
@@ -327,16 +313,13 @@ console.log(candleCheck)
                                 const roundWhiteRoseNoCandle = CardFactory.adaptiveCard(RoundWhiteRoseNoCandle);
                                 await context.sendActivity({ attachments: [roundWhiteRoseNoCandle] });
                             }
-                            await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                        await context.sendActivity('Have a great day !!!');
                             break;
                            
                             case "Cherries" :
                           
                                 const roundWhiteCherryCandle = CardFactory.adaptiveCard(RoundWhiteCherryNoCandle);
                                 await context.sendActivity({ attachments: [roundWhiteCherryCandle] });
-                                await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                                await context.sendActivity('Have a great day !!!');
+                            
                             break;
                         }
                 break;
@@ -354,29 +337,24 @@ console.log(candleCheck)
                                 const roundBlueCreamNoCandle = CardFactory.adaptiveCard(RoundBlueCreamWithNoCandle);
                                 await context.sendActivity({ attachments: [roundBlueCreamNoCandle] });
                             }
-                            await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                        await context.sendActivity('Have a great day !!!');
                             break;
                             case "Roses" :
                             
                                 const roundBlueRoseCandle = CardFactory.adaptiveCard(RoundBlueRoseWithCandle);
                                 await context.sendActivity({ attachments: [roundBlueRoseCandle] });
-                                await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                                await context.sendActivity('Have a great day !!!');
+                          
                             break;
                             case "Shells" :
                        
                                 const roundBlueShellCandle = CardFactory.adaptiveCard(RoundBlueShellWithCandle);
                                 await context.sendActivity({ attachments: [roundBlueShellCandle] });
-                                await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                                await context.sendActivity('Have a great day !!!');
+                           
                             break;
                             case "Cherries" :
                           
                                 const roundBlueCherryCandle = CardFactory.adaptiveCard(RoundBlueCherryWithCandle);
                                 await context.sendActivity({ attachments: [roundBlueCherryCandle] });
-                                await context.sendActivity('Here is your Cake. Thank you for choosing Cake House .');
-                                await context.sendActivity('Have a great day !!!');
+                            
                             break;
                         }
                         
@@ -390,7 +368,6 @@ console.log(candleCheck)
 
             
             }
-            
         }
            }
             } else {
